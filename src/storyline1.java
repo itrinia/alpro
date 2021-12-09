@@ -31,5 +31,6 @@ public class storyline1 {
         System.out.print("");
      
         System.out.println("haiii");
+        System.out.println("zzzz");
     }
 }
