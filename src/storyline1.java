@@ -12,26 +12,33 @@ import java.util.Scanner;
  * @author Ileene
  */
 public class storyline1 {
-    public static void main(String[] args) {
-        int opt1, opt2;
-        int menu;
-        String[] pil1 = {"Aku merasakan aku menjadi seorang mega bintang di usiaku saat ini"};
+    static Scanner scan = new Scanner (System.in);
+    static storyline1 story= new storyline1();
+    static String storybegin;
+    
+    public storyline1(){
+        System.out.println("\t\t===============================\n"
+                + "\t\tWELCOME AND LET THE STORY BEGIN\n"
+                + "\t\t===============================\n");
         
-        System.out.println("Siapa yang tidak menantikan liburan?\n "
-                + "Begitu pula dengan aku, seorang pelajar yang sedang duduk di bangku SD kelas 5.\n"
-                + "Teman-temanku mengenalku dengan nama Sally Chou.\n"
-                + "Hampir satu sekolah ini mengenalku karena aku anak yang cantik dan berbakat.\n"
-                + "Namun, dibalik ketenaran yang aku miliki, aku hanyalah manusia biasa.\n"
-                + "Inilah kisahku.");
-        System.out.println("");
-        System.out.println("Di suatu hari liburan, aku tertidur pulas dalam mimpiku.");
+        System.out.println("! POINT OF VIEW: reader as Sally Chou.\n");
+        System.out.println("!!! Disclaimer: Cerita ini hanya fiksi belaka,\n"
+                + "tidak ada maksud terselubung dari cerita ini,\n"
+                + "dan mohon maaf apabila ada kesamaan nama/kejadian\n"
+                + "karena ini disetting sedemikian rupa agar menjadi cerita fiksi.\n\n");
         
-        Scanner scan = new Scanner(System.in);
-        
-        System.out.print("");
-     
-        System.out.println("haiii");
-        System.out.println("zzzz");
-        System.out.println("hello");
+        System.out.println("Pada suatu hari libur, ada anak cantik bernama Sally Chou.\n"
+                + "Ia tertidur pulas.\n"
+                + "Dalam mimpinya, ia bermimpi pergi ke suatu tempat luas.\n"
+                + "Tempat itu sangat gelap, namun ia menemukan dua ruangan.\n"
+                + "Ruangan pertama bertuliskan 'YK89'.\n"
+                + "Ruang kedua bertuliskan 'CS10'.");
+        System.out.println("Apakah kamu mau ");
     }
+    
+    public static void main(String[] args) {
+       
+    }
+    
+    
 }
