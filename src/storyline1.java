@@ -70,21 +70,21 @@ public class storyline1 {
                                 + "======YOU ARE GOING TO THE END OF THE BEGINNING=====\n"
                                 + "Pilihanmu saat ini menentukan masa depanmu, tentukan sekarang.\n"
                                 + "1. Mengerjakan kuis matematika\n"
-                                + "2. Mengerjakan kuis logika\n\n");
+                                + "2. Mengerjakan kuis logika");
 
                         String misterius;
                         do {
-                            System.out.print("Apa yang akan kamu pilih? (ketik '1' atau '2': ");
+                            System.out.print("Apa yang akan kamu pilih? [ketik '1' atau '2']: ");
                             misterius = scan.nextLine();
                             if (misterius.equalsIgnoreCase("1")) {
-                                System.out.println("Pilihanmu adalah kuis matematika.\n"
+                                System.out.println("==Pilihanmu adalah kuis matematika.==\n"
                                         + "Aku adalah satu-satunya bilangan genap prima.\n"
                                         + "Siapakah aku?");
                                 System.out.print("jawaban: ");
                                 String kuismat = scan.nextLine();
                                 do {
                                     if (kuismat.equalsIgnoreCase("2")) {
-                                        System.out.println("Jawaban tepat. Silakan lanjut ke babak selanjutnya.");
+                                        System.out.println("Jawaban anda tepat. Silakan lanjut ke babak selanjutnya.");
                                         System.out.println("\n Kamu telah berhasil lolos dari babak awal.\n"
                                                 + "Inilah saatnya kamu harus mengetahui kenyataan ini.\n"
                                                 + "Di hadapanmu saat ini terdapat pintu dan jendela yang berwarna coklat.");
@@ -92,7 +92,7 @@ public class storyline1 {
                                         String pintujendela = scan.nextLine();
                                         do {
                                             if (pintujendela.equalsIgnoreCase("pintu")) {
-                                                
+
                                             } else if (pintujendela.equalsIgnoreCase("jendela")) {
 
                                             } else {
@@ -101,15 +101,40 @@ public class storyline1 {
                                         } while (pintujendela != "pintu" || pintujendela != "jendela");
 
                                     } else {
-                                        System.out.println("Jawaban salah. Silakan coba jawab lagi.");
+                                        System.out.println("Jawaban anda salah. Silakan coba jawab lagi.");
                                     }
                                 } while (kuismat != "2");
 
                             } else if (misterius.equalsIgnoreCase("2")) {
-                                System.out.println("Pilihanmu adalah kuis logika.\n"
-                                        + "Jika ");
+                                System.out.println("==Pilihanmu adalah kuis logika.==\n"
+                                        + "Aku adalah milikmu, tapi orang lain lebih sering menggunakan aku daripada dirimu sendiri.\n"
+                                        + "Apakah aku? ");
                                 System.out.print("jawaban: ");
-                                
+                                String kuislogika = scan.nextLine();
+                                do {
+                                    if (kuislogika.equalsIgnoreCase("nama")) {
+                                        System.out.println("Jawaban anda tepat. Silakan lanjut ke babak selanjutnya.");
+                                        System.out.println("\n Kamu telah berhasil lolos dari babak awal.\n"
+                                                + "Inilah saatnya kamu harus mengetahui kenyataan ini.\n"
+                                                + "Di hadapanmu saat ini terdapat pintu dan jendela yang berwarna coklat.");
+                                        System.out.print("Pilih 'pintu' atau 'jendela': ");
+                                        String pintujendela = scan.nextLine();
+                                        do {
+                                            if (pintujendela.equalsIgnoreCase("pintu")) {
+
+                                            } else if (pintujendela.equalsIgnoreCase("jendela")) {
+
+                                            } else {
+                                                System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
+                                            }
+                                        } while (pintujendela != "pintu" || pintujendela != "jendela");
+
+                                        
+                                    } else {
+                                        System.out.println("Jawaban anda salah. Silakan coba jawab lagi.");
+                                    }
+                                } while (kuislogika != "nama");
+
                             } else {
                                 System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
                             }
