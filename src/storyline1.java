@@ -16,9 +16,9 @@ public class storyline1 {
     static storyline1 story = new storyline1();
 
     public storyline1() {
-        System.out.println("\t\t===============================\n"
+        System.out.println("\t\t=================================\n"
                 + "\t\tWELCOME, AND LET THE STORY BEGIN\n"
-                + "\t\t===============================\n");
+                + "\t\t=================================\n");
 
         System.out.println("!!! Disclaimer:\n"
                 + "Cerita ini hanya fiksi belaka,\n"
@@ -113,22 +113,49 @@ public class storyline1 {
                                                         + "sama seperti angka 2 yang merupakan satu-satunya bilangan genap prima.\n"
                                                         + "Setelah berhasil melewati beberapa babak, kamu menemukan pintu terakhir dalam tempat ini.\n"
                                                         + "Disinilah kamu menemukan dirimu. Aku adalah kamu di 3 tahun kemudian.\n"
-                                                        + "Aku disini hanya ingin membuktikan bahwa dirimu sekarang akan bisa bertahan di masa depan.\n"
-                                                        + "DO WHATEVER YOU WANT TO DO AND ALWAYS BE HAPPY.'\n");
+                                                        + "Aku disini hanya ingin membuktikan bahwa dirimu sekarang akan bisa bertahan di masa depan.\n\n"
+                                                        + "==DO WHATEVER YOU WANT TO DO AND ALWAYS BE HAPPY.=='\n");
 
                                                 System.out.println("Inilah awal dari akhir dalam cerita kehidupanmu, Sally Chou.\n"
                                                         + "\t\t==========================\n"
                                                         + "\t\t\tTHE END\n"
                                                         + "\t\t==========================");
                                                 System.exit(0);
-                                                
+
                                             } else if (pintujendela.equalsIgnoreCase("jendela")) {
+                                                System.out.println("\nKamu memilih jendela dan korden pada jendela itu terbuka secara otomatis.\n"
+                                                        + "Jendela itu memiliki pemandangan yang sangat bagus.\n"
+                                                        + "Pemandangan itu menunjukkan langit malam hari yang sangat cantik.\n"
+                                                        + "Terdapat 1 pohon besar yang dapat terlihat melalui jendela tersebut.\n"
+                                                        + "Di bawah pohon tersebut, terdapat 1 orang anak laki-laki dan kakeknya yang sedang duduk bersantai.\n"
+                                                        + "Dari jendela ini, kamu bisa mendengar percakapan yang anak laki-laki dan kakeknya ini bincangkan.\n");
+
+                                                System.out.println("Anak itu bertanya pada kakeknya, 'Kakek, mengapa waktu tidak pernah berhenti?'\n"
+                                                        + "Lalu kakeknya menjawab 'Waktu akan terus berjalan dan tidak akan berhenti.\n"
+                                                        + "Kamu mungkin akan membutuhkan istirahat untuk berhenti sejenak dari aktifitasmu,\n"
+                                                        + "tapi waktu akan membantumu bersama dalam segala aktifitasmu.\n"
+                                                        + "Cahaya matahari tenggelam sore hari memang cantik. Namun matahari itu tidak akan bertahan selamanya.\n"
+                                                        + "Setelah ia tenggelam, malam akan tiba. Kegelapan akan muncul.\n"
+                                                        + "Langit akan berubah menjadi hitam seperti saat ini. Memang terlihat menyeramkan,\n"
+                                                        + "tetapi di langit hitam inilah kita bisa melihat sinar bulan yang sangat cantik dan bintang yang bersinar terang.\n"
+                                                        + "Lihatlah satu bintang kecil di langit itu,' ucap kakek itu sambil menunjuk bintang di langit.\n\n"
+                                                        + "'Kakek harap kamu bisa menjadi seperti bintang kecil itu.\n"
+                                                        + "Tetap bersinar walaupun gelapnya malam datang,' lanjut kakeknya.\n\n"
+                                                        + ""
+                                                        + "==TO BE A STAR, YOU MUST SHINE YOUR OWN LIGHT, FOLLOW YOUR PATH,\n"
+                                                        + "AND DON'T WORRY ABOUT THE DARKNESS, FOR THAT IS WHEN THE STARS SHINE BRIGHTEST.==\n"
+                                                        + "-Ralph Waldo Emerson");
+
+                                                System.out.println("\nInilah awal dari akhir dalam cerita kehidupanmu, Sally Chou.\n"
+                                                        + "\t\t==========================\n"
+                                                        + "\t\t\tTHE END\n"
+                                                        + "\t\t==========================");
+                                                System.exit(0);
 
                                             } else {
                                                 System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
                                             }
                                         } while (pintujendela != "pintu" || pintujendela != "jendela");
-                                        
 
                                     } else {
                                         System.out.println("Jawaban anda salah. Silakan coba jawab lagi.");
@@ -192,7 +219,7 @@ public class storyline1 {
     }
 
     public static void main(String[] args) {
-
+        new storyline1();
     }
 
 }
