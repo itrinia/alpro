@@ -17,10 +17,11 @@ public class storyline1 {
 
     public storyline1() {
         System.out.println("\t\t===============================\n"
-                + "\t\tWELCOME AND LET THE STORY BEGIN\n"
+                + "\t\tWELCOME, AND LET THE STORY BEGIN\n"
                 + "\t\t===============================\n");
 
-        System.out.println("!!! Disclaimer: Cerita ini hanya fiksi belaka,\n"
+        System.out.println("!!! Disclaimer:\n"
+                + "Cerita ini hanya fiksi belaka,\n"
                 + "tidak ada maksud terselubung dari cerita ini,\n"
                 + "dan mohon maaf apabila ada kesamaan nama/tempat kejadian perkara\n"
                 + "karena ini disetting sedemikian rupa agar menjadi cerita fiksi.\n\n");
@@ -56,8 +57,8 @@ public class storyline1 {
             System.out.print("[ketik 'buka' atau 'biarkan']: ");
             box = scan.nextLine();
             if (box.equalsIgnoreCase("buka")) {
-                System.out.println("\nKetika kamu membukanya, kamu menemukan tulisan 'HAPPY'");
-                System.out.println("Di kertas betuliskan HAPPY tersebut, terdapat 2 sisi.\n"
+                System.out.println("\nKetika kamu membukanya, kamu menemukan tulisan 'BE HAPPY'");
+                System.out.println("Di kertas betuliskan BE HAPPY tersebut, terdapat 2 sisi.\n"
                         + "Apa yang akan kamu lakukan?");
 
                 String kertas;
@@ -65,8 +66,9 @@ public class storyline1 {
                     System.out.print("[ketik 'bakar' untuk membakar kertasnya ATAU ketik 'balik' untuk membalik sisi kertas tersebut]: ");
                     kertas = scan.nextLine();
                     if (kertas.equalsIgnoreCase("bakar")) {
-                        System.out.println("\nKamu membakar kertas itu dan kertas tersebut memunculkan tulisan misterius.");
-                        System.out.println("Tulisan misterius itu bertuliskan:\n\n"
+                        System.out.println("\nKamu membakar kertas itu. \n"
+                                + "Abu kertas tersebut memunculkan tulisan misterius."
+                                + "Tulisan misterius itu bertuliskan:\n\n"
                                 + "======YOU ARE GOING TO THE END OF THE BEGINNING=====\n"
                                 + "Pilihanmu saat ini menentukan masa depanmu, tentukan sekarang.\n"
                                 + "1. Mengerjakan kuis matematika\n"
@@ -77,28 +79,56 @@ public class storyline1 {
                             System.out.print("Apa yang akan kamu pilih? [ketik '1' atau '2']: ");
                             misterius = scan.nextLine();
                             if (misterius.equalsIgnoreCase("1")) {
-                                System.out.println("==Pilihanmu adalah kuis matematika.==\n"
-                                        + "Aku adalah satu-satunya bilangan genap prima.\n"
-                                        + "Siapakah aku?");
+                                System.out.println("\n==Pilihanmu adalah kuis matematika.==\n"
+                                        + "Aku adalah satu-satunya bilangan genap prima di dunia ini.\n"
+                                        + "Siapakah aku? (jawaban berupa angka)");
                                 System.out.print("jawaban: ");
+
                                 String kuismat = scan.nextLine();
                                 do {
                                     if (kuismat.equalsIgnoreCase("2")) {
                                         System.out.println("Jawaban anda tepat. Silakan lanjut ke babak selanjutnya.");
-                                        System.out.println("\n Kamu telah berhasil lolos dari babak awal.\n"
+                                        System.out.println("\nKamu telah berhasil lolos dari babak awal.\n"
                                                 + "Inilah saatnya kamu harus mengetahui kenyataan ini.\n"
                                                 + "Di hadapanmu saat ini terdapat pintu dan jendela yang berwarna coklat.");
                                         System.out.print("Pilih 'pintu' atau 'jendela': ");
                                         String pintujendela = scan.nextLine();
                                         do {
                                             if (pintujendela.equalsIgnoreCase("pintu")) {
+                                                System.out.println("\nKamu memilih pintu dan pintu itu terbuka secara otomatis.\n"
+                                                        + "Pintu itu membawa kamu ke sebuah ruangan.\n"
+                                                        + "Dalam ruangan itu, kamu melihat dimensi dunia yang berbeda dari dunia aslimu.\n"
+                                                        + "Kamu melihat seseorang yang berwujud sama denganmu.\n"
+                                                        + "Ia adalah kamu di masa depan.\n"
+                                                        + "Ia berkata 'Lakukan apa yang ingin kamu lakukan, jangan pernah takut."
+                                                        + "Kegagalanmu akan membawamu pada kesuksesan.\n"
+                                                        + "Teruslah belajar dan pantanglah menyerah.'\n");
+                                                System.out.println("Lalu kamu menjawabnya 'Bagaimana bisa?'\n");
+                                                System.out.println("Ia menjawab 'Pilihan yang kamu pilih sejak tadi merupakan jawaban dari pertanyaanmu.\n"
+                                                        + "SH03 merupakan kode penanda yang berarti Semua jawaban atas pertanyaan-pertanyaanmu akan Hadir dalam 3 tahun ke depan.\n"
+                                                        + "Kemudian ketika kamu memutuskan untuk membuka box hitam dan ada kertas yang betuliskan 'BE HAPPY',\n"
+                                                        + "itu berarti dalam 3 tahun ke depan, aku harap kamu akan tetap bahagia apapun situasi dan kondisinya.\n"
+                                                        + "Lalu ketika kamu memutuskan untuk membakar kertasnya dan muncul kuis matematika,\n"
+                                                        + "itu menandakan bahwa kamu satu-satunya yang berharga bagi dirimu,\n"
+                                                        + "sama seperti angka 2 yang merupakan satu-satunya bilangan genap prima.\n"
+                                                        + "Setelah berhasil melewati beberapa babak, kamu menemukan pintu terakhir dalam tempat ini.\n"
+                                                        + "Disinilah kamu menemukan dirimu. Aku adalah kamu di 3 tahun kemudian.\n"
+                                                        + "Aku disini hanya ingin membuktikan bahwa dirimu sekarang akan bisa bertahan di masa depan.\n"
+                                                        + "DO WHATEVER YOU WANT TO DO AND ALWAYS BE HAPPY.'\n");
 
+                                                System.out.println("Inilah awal dari akhir dalam cerita kehidupanmu, Sally Chou.\n"
+                                                        + "\t\t==========================\n"
+                                                        + "\t\t\tTHE END\n"
+                                                        + "\t\t==========================");
+                                                System.exit(0);
+                                                
                                             } else if (pintujendela.equalsIgnoreCase("jendela")) {
 
                                             } else {
                                                 System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
                                             }
                                         } while (pintujendela != "pintu" || pintujendela != "jendela");
+                                        
 
                                     } else {
                                         System.out.println("Jawaban anda salah. Silakan coba jawab lagi.");
@@ -129,7 +159,6 @@ public class storyline1 {
                                             }
                                         } while (pintujendela != "pintu" || pintujendela != "jendela");
 
-                                        
                                     } else {
                                         System.out.println("Jawaban anda salah. Silakan coba jawab lagi.");
                                     }
