@@ -247,8 +247,38 @@ public class storyline1 {
 
             } else if (box.equalsIgnoreCase("biarkan")) {
                 System.out.println("\nBox hitam itu kamu biarkan saja. \n"
-                        + "Kamu berjalan lagi dan menemukan box biru.");
+                        + "Kamu berjalan lagi dan menemukan box biru.\n"
+                        + "Box itu berlabel ==HAPPY EVER AFTER==\n"
+                        + "Apa yang akan kamu lakukan dengan label itu?");
+                String label;
+                do {
+                    System.out.print("[ketik 'sobek' untuk menyobek labelnya ATAU ketik 'siram' untuk menyiram sisi label tersebut]: ");
+                    label = scan.nextLine();
+                    if (label.equalsIgnoreCase("sobek")){
+                        System.out.println("Kamu memilih untuk menyobek label tersebut.\n"
+                                + "Dibalik label itu ternyata memiliki kode khusus.\n"
+                                + "Kode itu bertuliskan sebagai berikut.\n"
+                                + ".... .- .--. .--. -.-- / . ...- . .-. / .- ..-. - . .-.\n"
+                                + "Apakah arti dari kode itu? (clue: terdapat 3 kata)");
+                        
+                        String morse = scan.nextLine();
+                        do {
+                            if (morse.equalsIgnoreCase("happy ever after")){
+                                
+                            }else{
+                                System.out.println("Jawaban anda salah. Silakan jawab lagi.");
+                            }                             
+                        }while(morse != "happy ever after" || morse != "HAPPY EVER AFTER");
+                        
+                    } else if (label.equalsIgnoreCase("siram")){
+                        
+                    }else{
+                        System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
+                    }
+                } while (label != "sobek" || label != "siram"); 
 
+                
+                
             } else {
                 System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
             }
