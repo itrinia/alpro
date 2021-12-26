@@ -1,4 +1,6 @@
 
+import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /*
@@ -14,6 +16,9 @@ public class storyline1 {
 
     static Scanner scan = new Scanner(System.in);
     static storyline1 story = new storyline1();
+    static String[] papan;
+    static String turn;
+    static String garis = null;
 
     public storyline1() {
         System.out.println("\t\t=================================\n"
@@ -172,19 +177,42 @@ public class storyline1 {
                                     if (kuislogika.equalsIgnoreCase("nama")) {
                                         System.out.println("Jawaban anda tepat. Silakan lanjut ke babak selanjutnya.");
                                         System.out.println("\n Kamu telah berhasil lolos dari babak awal.\n"
-                                                + "Inilah saatnya kamu harus mengetahui kenyataan ini.\n"
-                                                + "Di hadapanmu saat ini terdapat pintu dan jendela yang berwarna coklat.");
-                                        System.out.print("Pilih 'pintu' atau 'jendela': ");
-                                        String pintujendela = scan.nextLine();
+                                                + "Kamu menemukan sekantong fortune cookies dan sekantong permen");
+                                        System.out.print("Pilih 'fortune' atau 'permen': ");
+                                        String kantong = scan.nextLine();
                                         do {
-                                            if (pintujendela.equalsIgnoreCase("pintu")) {
+                                            if (kantong.equalsIgnoreCase("fortune")) {
+                                                System.out.println("Kamu memilih fortune cookies.\n"
+                                                        + "Fortune cookies merupakan suatu kue keberuntungan yang memiliki berbagai macam kalimat positif di dalamnya.\n"
+                                                        + "Silakan coba makan satu, dan kamu akan menemukan kalimat yang cocok dengan situasimu saat ini.\n"
+                                                        + "Di saat memakannya, aku harap kamu bisa menikmati cookies ini dan tetap berpikir positif ke depannya.\n"
+                                                        + "Hidup tidak hanya berhenti pada kenyataan yang kamu lalui, melainkan ekspektasimulah yang membuat kenyataan ini berubah.\n\n"
+                                                        + "==LIFE IS NOT A PROBLEM TO BE SOLVED. BUT RATHER A MYSTERY TO BE LIVED.==");
 
-                                            } else if (pintujendela.equalsIgnoreCase("jendela")) {
+                                                System.out.println("\nInilah awal dari akhir dalam cerita kehidupanmu, Sally Chou.\n"
+                                                        + "\t\t==========================\n"
+                                                        + "\t\t\tTHE END\n"
+                                                        + "\t\t==========================");
+                                                System.exit(0);
+
+                                            } else if (kantong.equalsIgnoreCase("permen")) {
+                                                System.out.println("Kamu memilih sekantong permen.\n"
+                                                        + "Manis. Itulah yang terlintas dalam benak sebagian orang ketika mendengar kata permen.\n"
+                                                        + "Aku harap kamu akan selalu merasakan manisnya hidup dalam segala pahitnya perjuangan yang telah kamu lalui.\n"
+                                                        + "Kamu telah mengambil jalan yang benar, kamu tidak salah.\n"
+                                                        + "Lanjutkan dan jangan pernah menyesali masa lalu yang ada, karena masa lalumu membentukmu saat ini.\n\n"
+                                                        + "==LIFE IS SHORT, SO MAKE IT SWEET==");
+
+                                                System.out.println("\nInilah awal dari akhir dalam cerita kehidupanmu, Sally Chou.\n"
+                                                        + "\t\t==========================\n"
+                                                        + "\t\t\tTHE END\n"
+                                                        + "\t\t==========================");
+                                                System.exit(0);
 
                                             } else {
                                                 System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
                                             }
-                                        } while (pintujendela != "pintu" || pintujendela != "jendela");
+                                        } while (kantong != "fortune" || kantong != "permen");
 
                                     } else {
                                         System.out.println("Jawaban anda salah. Silakan coba jawab lagi.");
@@ -197,7 +225,20 @@ public class storyline1 {
                         } while (misterius != "1" || misterius != "2");
 
                     } else if (kertas.equalsIgnoreCase("balik")) {
-                        System.out.println("Kamu membalik kertas tersebut dan menemukan sebuah perintah.");
+                        System.out.println("\nKamu membalik kertas tersebut dan menemukan sebuah perintah.\n"
+                                + "Perintah pertama menginstruksikan kamu untuk bermain tik tak toe.\n"
+                                + "(permainan ini dimainkan oleh 2 orang).");
+                        tiktaktu();
+                        System.out.println("\nTerima kasih telah bermain tik tak toe.\n"
+                                + "Kamu melakukan yang terbaik dari yang terbaik.\n"
+                                + "Semoga keberanianmu ini akan awet di kehidupan nyatamu.\n\n"
+                                + "==LIFE IS LIKE A TIC TAC TOE GAME. THINK. PLAN. MAKE YOUR MOVE==");
+
+                        System.out.println("\n\t\t==========================\n"
+                                + "\t\t\tTHE END\n"
+                                + "\t\t==========================");
+                        System.exit(0);
+
                     } else {
                         System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
                     }
@@ -218,8 +259,120 @@ public class storyline1 {
 
     }
 
+    public void tiktaktu() {
+        Scanner in = new Scanner(System.in);
+
+        papan = new String[9];
+        turn = "X";
+        String winner = null;
+        for (int a = 0; a < 9; a++) {
+            papan[a] = String.valueOf(a + 1);
+        }
+
+        System.out.println("\n==WELCOME TO 3X3 TIC TAC TOE==");
+        printpapan();                                       //manggil papan di function bawah
+
+        System.out.print(
+                "X akan bermain dahulu. Masukkan angka untuk X: ");
+
+        while (winner == null) {
+            int nmrinput = in.nextInt();
+            try {
+                if (!(nmrinput > 0 && nmrinput <= 9)) {
+                    System.out.print(
+                            "Error (angka tidak terdeteksi); masukkan angka baru: ");
+                    continue;
+                }
+            } catch (InputMismatchException e) {
+                System.out.print(
+                        "Error (angka tidak terdeteksi); masukkan angka baru: ");
+                continue;
+            }
+
+            if (papan[nmrinput - 1].equals(
+                    String.valueOf(nmrinput))) {
+                papan[nmrinput - 1] = turn;
+
+                if (turn.equals("X")) {
+                    turn = "O";
+                } else {
+                    turn = "X";
+                }
+                printpapan();
+                winner = cek();
+            } else {
+                System.out.print(
+                        "Slot telah terpenuhi. Silakan masukkan angka baru: ");
+            }
+        }
+
+        //kasus: klo hasil seri
+        if (winner.equalsIgnoreCase("draw")) {
+            System.out.println(
+                    "It's a draw. Hasilnya seri.");
+        } //klo menang
+        else {
+            System.out.println(
+                    "Congratulations! Pemenangnya adalah " + winner);
+        }
+    }
+
+    static String cek() {
+
+        for (int a = 0; a < 8; a++) {
+            if (a == 0) {
+                garis = papan[0] + papan[1] + papan[2];
+            } else if (a == 1) {
+                garis = papan[3] + papan[4] + papan[5];
+            } else if (a == 2) {
+                garis = papan[6] + papan[7] + papan[8];
+            } else if (a == 3) {
+                garis = papan[0] + papan[3] + papan[6];
+            } else if (a == 4) {
+                garis = papan[1] + papan[4] + papan[7];
+            } else if (a == 5) {
+                garis = papan[2] + papan[5] + papan[8];
+            } else if (a == 6) {
+                garis = papan[0] + papan[4] + papan[8];
+            } else if (a == 7) {
+                garis = papan[2] + papan[4] + papan[6];
+            }
+
+            //cek menang
+            //x menang
+            if (garis.equals("XXX")) {
+                return "X";
+            } // o menang
+            else if (garis.equals("OOO")) {
+                return "O";
+            }
+        }
+
+        for (int i = 0; i < 9; i++) {
+            if (Arrays.asList(papan).contains(
+                    String.valueOf(i + 1))) {
+                break;
+            } else if (i == 8) {
+                return "draw";
+            }
+        }
+
+        System.out.print(turn + "'s turn; enter a slot number to place " + turn + " in: ");
+        return null;
+    }
+
+    //bikin papan nya
+    static void printpapan() {
+        System.out.println("|---|---|---|");
+        System.out.println("| " + papan[0] + " | " + papan[1] + " | " + papan[2] + " |");
+        System.out.println("|-----------|");
+        System.out.println("| " + papan[3] + " | " + papan[4] + " | " + papan[5] + " |");
+        System.out.println("|-----------|");
+        System.out.println("| " + papan[6] + " | " + papan[7] + " | " + papan[8] + " |");
+        System.out.println("|---|---|---|");
+    }
+
     public static void main(String[] args) {
         new storyline1();
     }
-
 }
