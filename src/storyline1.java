@@ -264,7 +264,7 @@ public class storyline1 {
                         String morse = scan.nextLine();
                         do {
                             if (morse.equalsIgnoreCase("happy ever after")){
-                                
+                                System.out.println(" ");
                             }else{
                                 System.out.println("Jawaban anda salah. Silakan jawab lagi.");
                             }                             
