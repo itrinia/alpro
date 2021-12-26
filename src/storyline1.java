@@ -360,8 +360,7 @@ public class storyline1 {
         System.out.print(turn + "'s turn; enter a slot number to place " + turn + " in: ");
         return null;
     }
-
-    //bikin papan nya
+    
     static void printpapan() {
         System.out.println("|---|---|---|");
         System.out.println("| " + papan[0] + " | " + papan[1] + " | " + papan[2] + " |");
@@ -370,7 +369,7 @@ public class storyline1 {
         System.out.println("|-----------|");
         System.out.println("| " + papan[6] + " | " + papan[7] + " | " + papan[8] + " |");
         System.out.println("|---|---|---|");
-    }
+    }  //bikin papan
 
     public static void main(String[] args) {
         new storyline1();
