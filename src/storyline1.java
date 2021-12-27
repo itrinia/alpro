@@ -57,13 +57,14 @@ public class storyline1 {
 
     public void sh03() {
         String box;
-        System.out.println("\nDi ruang itu, kamu melihat box hitam.");
+        System.out.println("\nDi ruang itu, kamu melihat box hitam.\n"
+                + "Apa yang akan kamu lakukan? Membukanya atau membiarkan kotak tersebut?");
         do {
             System.out.print("[ketik 'buka' atau 'biarkan']: ");
             box = scan.nextLine();
             if (box.equalsIgnoreCase("buka")) {
                 System.out.println("\nKetika kamu membukanya, kamu menemukan tulisan 'BE HAPPY'");
-                System.out.println("Di kertas betuliskan BE HAPPY tersebut, terdapat 2 sisi.\n"
+                System.out.println("Di kertas betuliskan 'BE HAPPY' tersebut, terdapat 2 sisi.\n"
                         + "Apa yang akan kamu lakukan?");
 
                 String kertas;
@@ -176,13 +177,13 @@ public class storyline1 {
                                 do {
                                     if (kuislogika.equalsIgnoreCase("nama")) {
                                         System.out.println("Jawaban anda tepat. Silakan lanjut ke babak selanjutnya.");
-                                        System.out.println("\n Kamu telah berhasil lolos dari babak awal.\n"
+                                        System.out.println("\nKamu telah berhasil lolos dari babak awal.\n"
                                                 + "Kamu menemukan sekantong fortune cookies dan sekantong permen");
                                         System.out.print("Pilih 'fortune' atau 'permen': ");
                                         String kantong = scan.nextLine();
                                         do {
                                             if (kantong.equalsIgnoreCase("fortune")) {
-                                                System.out.println("Kamu memilih fortune cookies.\n"
+                                                System.out.println("Kamu memilih fortune cookies.\n\n"
                                                         + "Fortune cookies merupakan suatu kue keberuntungan yang memiliki berbagai macam kalimat positif di dalamnya.\n"
                                                         + "Silakan coba makan satu, dan kamu akan menemukan kalimat yang cocok dengan situasimu saat ini.\n"
                                                         + "Di saat memakannya, aku harap kamu bisa menikmati cookies ini dan tetap berpikir positif ke depannya.\n"
@@ -254,31 +255,70 @@ public class storyline1 {
                 do {
                     System.out.print("[ketik 'sobek' untuk menyobek labelnya ATAU ketik 'siram' untuk menyiram sisi label tersebut]: ");
                     label = scan.nextLine();
-                    if (label.equalsIgnoreCase("sobek")){
-                        System.out.println("Kamu memilih untuk menyobek label tersebut.\n"
+                    if (label.equalsIgnoreCase("sobek")) {
+                        System.out.println("\nKamu memilih untuk menyobek label tersebut.\n"
                                 + "Dibalik label itu ternyata memiliki kode khusus.\n"
                                 + "Kode itu bertuliskan sebagai berikut.\n"
-                                + ".... .- .--. .--. -.-- / . ...- . .-. / .- ..-. - . .-.\n"
-                                + "Apakah arti dari kode itu? (clue: terdapat 3 kata)");
-                        
+                                + ".... .- .--. .--. -.-- / . ...- . .-. / .- ..-. -");
+                        System.out.print("Apakah arti dari kode itu? (CLUE = terdapat 3 kata): ");
+
                         String morse = scan.nextLine();
                         do {
-                            if (morse.equalsIgnoreCase("happy ever after")){
-                                System.out.println(" ");
-                            }else{
+                            if (morse.equalsIgnoreCase("happy ever after")) {
+                                System.out.println("Selamat, anda telah berhasil menebak kata sandi tersebut.\n"
+                                        + "Sekarang saatnya anda bermain dalam permainan yang sesungguhnya.\n\n"
+                                        + "Di hadapan anda terdapat amplop berwarna putih dan hitam.");
+                                System.out.print("Apa yang akan kamu pilih? [ketik 'putih' atau 'hitam']: ");
+
+                                String amplop = scan.nextLine();
+                                do {
+                                    if (amplop.equalsIgnoreCase("putih")) {
+                                        System.out.println("\nKamu memilih amplop yang tepat.\n"
+                                                + "Ketika kamu membukanya, kamu mendapati sebuah kertas origami berwarna merah.\n"
+                                                + "Di kertas origami tersebut terdapat tulisan:\n\n"
+                                                + "'Hujan masih air, waktu akan tetap berjalan seperti air sungai yang deras.\n"
+                                                + " Tak peduli seberapa jauh ujung sungai tersebut,\n"
+                                                + " sejauh kamu bisa membayangkannya, itu berarti kamu bisa menggapainya.'\n\n"
+                                                + "==IT'S NOT THE BEGINNING OF THE END, IT'S THE END OF THE BEGINNING==");
+
+                                        System.out.println("\n\t\t==========================\n"
+                                                + "\t\t\tTHE END\n"
+                                                + "\t\t==========================");
+                                        System.exit(0);
+
+                                    } else if (amplop.equalsIgnoreCase("hitam")) {
+                                        System.out.println("Kamu memilih amplop berwarna hitam.\n"
+                                                + "Amplop ini tergolong sangat langka dikarenakan jarang orang menggunakannya.\n"
+                                                + "Ketika kamu membuka amplop hitam ini, kamu mendapati sebuah kalung emas putih dengan liontin yang menggantung pada kalung itu.\n"
+                                                + "Liontin itu berbentuk daun clover berwarna violet.\n"
+                                                + "Ketika kamu mengarahkan liontin tersebut ke cahaya, liontin itu menampilkan tulisan:\n"
+                                                + "'You are what you do, just do what you like and like what you do.\n"
+                                                + " Kamu berharga dan aku yakin kamu akan memiliki masa depan yang cerah.\n"
+                                                + " Percayalah pada dirimu sendiri, dan lakukan.\n\n"
+                                                + "==BE FIRST, BE DIFFERENT, BE UNIQUE==");
+                                        
+                                        System.out.println("\n\t\t==========================\n"
+                                                + "\t\t\tTHE END\n"
+                                                + "\t\t==========================");
+                                        System.exit(0);
+
+                                    } else {
+                                        System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
+                                    }
+                                } while (amplop != "putih" || amplop != "hitam");
+
+                            } else {
                                 System.out.println("Jawaban anda salah. Silakan jawab lagi.");
-                            }                             
-                        }while(morse != "happy ever after" || morse != "HAPPY EVER AFTER");
-                        
-                    } else if (label.equalsIgnoreCase("siram")){
-                        
-                    }else{
+                            }
+                        } while (morse != "happy ever after" || morse != "HAPPY EVER AFTER");
+
+                    } else if (label.equalsIgnoreCase("siram")) {
+
+                    } else {
                         System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
                     }
-                } while (label != "sobek" || label != "siram"); 
+                } while (label != "sobek" || label != "siram");
 
-                
-                
             } else {
                 System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
             }
@@ -390,7 +430,7 @@ public class storyline1 {
         System.out.print(turn + "'s turn; enter a slot number to place " + turn + " in: ");
         return null;
     }
-    
+
     static void printpapan() {
         System.out.println("|---|---|---|");
         System.out.println("| " + papan[0] + " | " + papan[1] + " | " + papan[2] + " |");
