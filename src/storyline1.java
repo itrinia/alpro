@@ -52,7 +52,7 @@ public class storyline1 {
             } else {
                 System.out.println("\t!!! Inputan anda tidak valid. silakan input ulang !!!\n");              //looping e ga brenti smpe loop trakhir
             }
-        } while (ruang != "SH03" || ruang != "CS10");
+        } while ((!(ruang.equalsIgnoreCase("sh03"))) || (!(ruang.equalsIgnoreCase("cs10"))));
     }
 
     public void sh03() {
@@ -88,18 +88,21 @@ public class storyline1 {
                                 System.out.println("\n==Pilihanmu adalah kuis matematika.==\n"
                                         + "Aku adalah satu-satunya bilangan genap prima di dunia ini.\n"
                                         + "Siapakah aku? (jawaban berupa angka)");
-                                System.out.print("jawaban: ");
 
-                                String kuismat = scan.nextLine();
+                                String kuismat;
                                 do {
+                                    System.out.print("jawaban: ");
+                                    kuismat = scan.nextLine();
                                     if (kuismat.equalsIgnoreCase("2")) {
                                         System.out.println("Jawaban anda tepat. Silakan lanjut ke babak selanjutnya.");
                                         System.out.println("\nKamu telah berhasil lolos dari babak awal.\n"
                                                 + "Inilah saatnya kamu harus mengetahui kenyataan ini.\n"
                                                 + "Di hadapanmu saat ini terdapat pintu dan jendela yang berwarna coklat.");
-                                        System.out.print("Pilih 'pintu' atau 'jendela': ");
-                                        String pintujendela = scan.nextLine();
+
+                                        String pintujendela;
                                         do {
+                                            System.out.print("Pilih 'pintu' atau 'jendela': ");
+                                            pintujendela = scan.nextLine();
                                             if (pintujendela.equalsIgnoreCase("pintu")) {
                                                 System.out.println("\nKamu memilih pintu dan pintu itu terbuka secara otomatis.\n"
                                                         + "Pintu itu membawa kamu ke sebuah ruangan.\n"
@@ -161,27 +164,31 @@ public class storyline1 {
                                             } else {
                                                 System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
                                             }
-                                        } while (pintujendela != "pintu" || pintujendela != "jendela");
+                                        } while ((!(pintujendela.equalsIgnoreCase("pintu"))) || (!(pintujendela.equalsIgnoreCase("jendela"))));
 
                                     } else {
                                         System.out.println("Jawaban anda salah. Silakan coba jawab lagi.");
                                     }
-                                } while (kuismat != "2");
+                                } while ((!(kuismat.equalsIgnoreCase("2"))));
 
                             } else if (misterius.equalsIgnoreCase("2")) {
                                 System.out.println("==Pilihanmu adalah kuis logika.==\n"
                                         + "Aku adalah milikmu, tapi orang lain lebih sering menggunakan aku daripada dirimu sendiri.\n"
                                         + "Apakah aku? ");
-                                System.out.print("jawaban: ");
-                                String kuislogika = scan.nextLine();
+
+                                String kuislogika;
                                 do {
+                                    System.out.print("jawaban: ");
+                                    kuislogika = scan.nextLine();
                                     if (kuislogika.equalsIgnoreCase("nama")) {
                                         System.out.println("Jawaban anda tepat. Silakan lanjut ke babak selanjutnya.");
                                         System.out.println("\nKamu telah berhasil lolos dari babak awal.\n"
                                                 + "Kamu menemukan sekantong fortune cookies dan sekantong permen");
-                                        System.out.print("Pilih 'fortune' atau 'permen': ");
-                                        String kantong = scan.nextLine();
+
+                                        String kantong;
                                         do {
+                                            System.out.print("Pilih 'fortune' atau 'permen': ");
+                                            kantong = scan.nextLine();
                                             if (kantong.equalsIgnoreCase("fortune")) {
                                                 System.out.println("Kamu memilih fortune cookies.\n\n"
                                                         + "Fortune cookies merupakan suatu kue keberuntungan yang memiliki berbagai macam kalimat positif di dalamnya.\n"
@@ -213,17 +220,17 @@ public class storyline1 {
                                             } else {
                                                 System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
                                             }
-                                        } while (kantong != "fortune" || kantong != "permen");
+                                        } while ((!(kantong.equalsIgnoreCase("fortune"))) || (!(kantong.equalsIgnoreCase("permen"))));
 
                                     } else {
                                         System.out.println("Jawaban anda salah. Silakan coba jawab lagi.");
                                     }
-                                } while (kuislogika != "nama");
+                                } while ((!(kuislogika.equalsIgnoreCase("nama"))));
 
                             } else {
                                 System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
                             }
-                        } while (misterius != "1" || misterius != "2");
+                        } while ((!(misterius.equalsIgnoreCase("1"))) || (!(misterius.equalsIgnoreCase("2"))));
 
                     } else if (kertas.equalsIgnoreCase("balik")) {
                         System.out.println("\nKamu membalik kertas tersebut dan menemukan sebuah perintah.\n"
@@ -244,7 +251,7 @@ public class storyline1 {
                         System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
                     }
 
-                } while (kertas != "bakar" || kertas != "balik");
+                } while ((!(kertas.equalsIgnoreCase("bakar"))) || (!(kertas.equalsIgnoreCase("bakar"))));
 
             } else if (box.equalsIgnoreCase("biarkan")) {
                 System.out.println("\nBox hitam itu kamu biarkan saja. \n"
@@ -260,10 +267,11 @@ public class storyline1 {
                                 + "Dibalik label itu ternyata memiliki kode khusus.\n"
                                 + "Kode itu bertuliskan sebagai berikut.\n"
                                 + ".... .- .--. .--. -.-- / . ...- . .-. / .- ..-. -");
-                        System.out.print("Apakah arti dari kode itu? (CLUE = terdapat 3 kata): ");
 
-                        String morse = scan.nextLine();
+                        String morse;
                         do {
+                            System.out.print("Apakah arti dari kode itu? (CLUE = terdapat 3 kata): ");
+                            morse = scan.nextLine();
                             if (morse.equalsIgnoreCase("happy ever after")) {
                                 System.out.println("Selamat, anda telah berhasil menebak kata sandi tersebut.\n"
                                         + "Sekarang saatnya anda bermain dalam permainan yang sesungguhnya.\n\n"
@@ -296,7 +304,7 @@ public class storyline1 {
                                                 + " Kamu berharga dan aku yakin kamu akan memiliki masa depan yang cerah.\n"
                                                 + " Percayalah pada dirimu sendiri, dan lakukan.\n\n"
                                                 + "==BE FIRST, BE DIFFERENT, BE UNIQUE==");
-                                        
+
                                         System.out.println("\n\t\t==========================\n"
                                                 + "\t\t\tTHE END\n"
                                                 + "\t\t==========================");
@@ -305,24 +313,24 @@ public class storyline1 {
                                     } else {
                                         System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
                                     }
-                                } while (amplop != "putih" || amplop != "hitam");
+                                } while (!(amplop.equalsIgnoreCase("hitam")) || (!(amplop.equalsIgnoreCase("putih"))));
 
                             } else {
                                 System.out.println("Jawaban anda salah. Silakan jawab lagi.");
                             }
-                        } while (morse != "happy ever after" || morse != "HAPPY EVER AFTER");
+                        } while (!(morse.equalsIgnoreCase("happy ever after")));
 
                     } else if (label.equalsIgnoreCase("siram")) {
 
                     } else {
                         System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
                     }
-                } while (label != "sobek" || label != "siram");
+                } while ((!(label.equalsIgnoreCase("sobek"))) || (!(label.equalsIgnoreCase("siram"))));
 
             } else {
                 System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
             }
-        } while (box != "buka" || box != "biarkan");
+        } while ((!(box.equalsIgnoreCase("buka"))) || (!(box.equalsIgnoreCase("biarkan"))));
     }
 
     public void cs10() {
