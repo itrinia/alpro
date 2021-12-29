@@ -1,6 +1,7 @@
 
 import java.util.Arrays;
 import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
 
 /*
@@ -12,15 +13,14 @@ import java.util.Scanner;
  *
  * @author Ileene
  */
-public class storyline1 {
+public class storyline2 {
 
     static Scanner scan = new Scanner(System.in);
-    static storyline1 story = new storyline1();
-    static String[] papan;
-    static String turn;
-    static String garis = null;
+    static Random acak = new Random();
+    static int angka = acak.nextInt(10) + 1;
+    static int tebak = 0;
 
-    public storyline1() {
+    public void storyline(Scanner in, String turn, String[] papan, storyline2 obj, String garis) {
         System.out.println("\t\t=================================\n"
                 + "\t\tWELCOME, AND LET THE STORY BEGIN\n"
                 + "\t\t=================================\n");
@@ -46,7 +46,7 @@ public class storyline1 {
             System.out.print("[ketik 'SH03' atau 'CS10']: ");
             ruang = scan.nextLine();
             if (ruang.equalsIgnoreCase("SH03")) {
-                sh03();
+                obj.sh03(in, turn, papan, obj, garis);
             } else if (ruang.equalsIgnoreCase("CS10")) {
                 cs10();
             } else {
@@ -55,7 +55,7 @@ public class storyline1 {
         } while ((!(ruang.equalsIgnoreCase("sh03"))) || (!(ruang.equalsIgnoreCase("cs10"))));
     }
 
-    public void sh03() {
+    public void sh03(Scanner in, String turn, String[] papan, storyline2 obj, String garis) {
         String box;
         System.out.println("\nDi ruang itu, kamu melihat box hitam.\n"
                 + "Apa yang akan kamu lakukan? Membukanya atau membiarkan kotak tersebut?");
@@ -236,7 +236,7 @@ public class storyline1 {
                         System.out.println("\nKamu membalik kertas tersebut dan menemukan sebuah perintah.\n"
                                 + "Perintah pertama menginstruksikan kamu untuk bermain tik tak toe.\n"
                                 + "(permainan ini dimainkan oleh 2 orang).");
-                        tiktaktu();
+                        obj.tiktaktu(in, turn, papan, obj, garis);
                         System.out.println("\nTerima kasih telah bermain tik tak toe.\n"
                                 + "Kamu melakukan yang terbaik dari yang terbaik.\n"
                                 + "Semoga keberanianmu ini akan awet di kehidupan nyatamu.\n\n"
@@ -321,6 +321,14 @@ public class storyline1 {
                         } while (!(morse.equalsIgnoreCase("happy ever after")));
 
                     } else if (label.equalsIgnoreCase("siram")) {
+                        System.out.println("\nKamu menyiram label itu.\n"
+                                + "Label itu memunculkan tulisan berwarna biru setelah disiram.\n"
+                                + "'Anda diminta untuk bermain dalam sebuah permainan untuk lanjut ke babak selanjutnya.\n"
+                                + " Terdapat 2 jenis pilihan permainan yang dapat kamu mainkan.\n"
+                                + " Permainan pertama adalah tebak angka.\n"
+                                + " Permainan kedua adalah ");
+
+                        
 
                     } else {
                         System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
@@ -337,10 +345,8 @@ public class storyline1 {
 
     }
 
-    public void tiktaktu() {
-        Scanner in = new Scanner(System.in);
+    public void tiktaktu(Scanner in, String turn, String[] papan, storyline2 obj, String garis) {
 
-        papan = new String[9];
         turn = "X";
         String winner = null;
         for (int a = 0; a < 9; a++) {
@@ -348,7 +354,7 @@ public class storyline1 {
         }
 
         System.out.println("\n==WELCOME TO 3X3 TIC TAC TOE==");
-        printpapan();                                       //manggil papan di function bawah
+        obj.printpapan(papan);                                       //manggil papan di function bawah
 
         System.out.print(
                 "X akan bermain dahulu. Masukkan angka untuk X: ");
@@ -376,8 +382,8 @@ public class storyline1 {
                 } else {
                     turn = "X";
                 }
-                printpapan();
-                winner = cek();
+                obj.printpapan(papan);
+                winner = obj.cek(garis, papan, turn);
             } else {
                 System.out.print(
                         "Slot telah terpenuhi. Silakan masukkan angka baru: ");
@@ -395,7 +401,7 @@ public class storyline1 {
         }
     }
 
-    static String cek() {
+    public String cek(String garis, String[] papan, String turn) {
 
         for (int a = 0; a < 8; a++) {
             if (a == 0) {
@@ -439,7 +445,7 @@ public class storyline1 {
         return null;
     }
 
-    static void printpapan() {
+    public void printpapan(String[] papan) {  //bikin papannya tiktaktu
         System.out.println("|---|---|---|");
         System.out.println("| " + papan[0] + " | " + papan[1] + " | " + papan[2] + " |");
         System.out.println("|-----------|");
@@ -447,9 +453,37 @@ public class storyline1 {
         System.out.println("|-----------|");
         System.out.println("| " + papan[6] + " | " + papan[7] + " | " + papan[8] + " |");
         System.out.println("|---|---|---|");
-    }  //bikin papan
+    }
+
+    public void tebakangka() {
+        //System.out.println("angka random itu adalah: " + String.valueOf(angka));   -- ini cuma buat munculin angka randomnya brp--
+        while (tebak != angka) {
+            try {
+                System.out.print("Silakan tebak angka antara 1 sampai 10: ");
+                tebak = scan.nextInt();
+                if (tebak < angka) {
+                    System.out.println("Angka terlalu kecil. Silakan tebak lagi.\n");
+                } else if (tebak > angka) {
+                    System.out.println("Angka terlalu besar. Silakan tebak lagi.\n");
+                } else {
+                    System.out.println("Jawaban anda benar!");
+                    System.exit(0);
+                }
+            } catch (Exception e) {
+                System.out.println("Jawaban yang dimasukkan harus berupa angka.");
+            }
+        }
+    }
 
     public static void main(String[] args) {
-        new storyline1();
+        Scanner in = new Scanner(System.in);
+        String[] papan = new String[9];
+        String turn = "X";
+        String garis = null;
+        storyline2 obj = new storyline2();
+
+        obj.storyline(in, turn, papan, obj, garis);
+        obj.sh03(in, turn, papan, obj, garis);
+
     }
 }

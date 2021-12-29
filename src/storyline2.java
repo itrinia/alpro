@@ -1,6 +1,7 @@
 
 import java.util.Arrays;
 import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
 
 /*
@@ -317,10 +318,13 @@ public class storyline2 {
                         } while (!(morse.equalsIgnoreCase("happy ever after")));
 
                     } else if (label.equalsIgnoreCase("siram")) {
-                        System.out.println("Kamu menyiram label itu.\n"
+                        System.out.println("\nKamu menyiram label itu.\n"
                                 + "Label itu memunculkan tulisan berwarna biru setelah disiram.\n"
-                                + "");
-                        
+                                + "'Anda diminta untuk bermain dalam sebuah permainan untuk lanjut ke babak selanjutnya.\n"
+                                + " Terdapat 2 jenis pilihan permainan yang dapat kamu mainkan.\n"
+                                + " Permainan pertama adalah tebak angka.\n"
+                                + " Permainan kedua adalah ");
+
                     } else {
                         System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
                     }
@@ -436,7 +440,7 @@ public class storyline2 {
         return null;
     }
 
-    public void printpapan(String[] papan) {
+    public void printpapan(String[] papan) {  //bikin papannya tiktaktu
         System.out.println("|---|---|---|");
         System.out.println("| " + papan[0] + " | " + papan[1] + " | " + papan[2] + " |");
         System.out.println("|-----------|");
@@ -444,7 +448,30 @@ public class storyline2 {
         System.out.println("|-----------|");
         System.out.println("| " + papan[6] + " | " + papan[7] + " | " + papan[8] + " |");
         System.out.println("|---|---|---|");
-    }  //bikin papan
+    }
+
+    public void tebakangka() {
+        Random acak = new Random();
+        int angka = acak.nextInt(10) + 1;
+        int tebak = 0;
+        //System.out.println("angka random itu adalah: " + String.valueOf(angka));   -- ini cuma buat munculin angka randomnya brp--
+        while (tebak != angka) {
+            try {
+                System.out.print("Silakan tebak angka antara 1 sampai 10: ");
+                tebak = scan.nextInt();
+                if (tebak < angka) {
+                    System.out.println("Angka terlalu kecil. Silakan tebak lagi.\n");
+                } else if (tebak > angka) {
+                    System.out.println("Angka terlalu besar. Silakan tebak lagi.\n");
+                } else {
+                    System.out.println("Jawaban anda benar!");
+                    System.exit(0);
+                }
+            } catch (Exception e) {
+                System.out.println("Jawaban yang dimasukkan harus berupa angka.");
+            }
+        }
+    }
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
