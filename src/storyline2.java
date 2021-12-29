@@ -149,7 +149,7 @@ public class storyline2 {
                                                         + "Tetap bersinar walaupun gelapnya malam datang,' lanjut kakeknya.\n\n"
                                                         + ""
                                                         + "==TO BE A STAR, YOU MUST SHINE YOUR OWN LIGHT, FOLLOW YOUR PATH,\n"
-                                                        + "AND DON'T WORRY ABOUT THE DARKNESS, FOR THAT IS WHEN THE STARS SHINE BRIGHTEST.==\n"
+                                                        + "  AND DON'T WORRY ABOUT THE DARKNESS, FOR THAT IS WHEN THE STARS SHINE BRIGHTEST.==\n"
                                                         + "-Ralph Waldo Emerson");
 
                                                 System.out.println("\nInilah awal dari akhir dalam cerita kehidupanmu, Sally Chou.\n"
@@ -323,7 +323,20 @@ public class storyline2 {
                                 + "'Anda diminta untuk bermain dalam sebuah permainan untuk lanjut ke babak selanjutnya.\n"
                                 + " Terdapat 2 jenis pilihan permainan yang dapat kamu mainkan.\n"
                                 + " Permainan pertama adalah tebak angka.\n"
-                                + " Permainan kedua adalah ");
+                                + " Permainan kedua adalah tebak hewan.'");
+
+                        String kuistebak;
+                        do {
+                            System.out.print("Permainan mana yang akan kamu pilih? [ketik '1' atau '2']:  ");
+                            kuistebak = scan.nextLine();
+                            if (kuistebak.equalsIgnoreCase("1")) {
+                                tebakangka();
+                            } else if (kuistebak.equalsIgnoreCase("2")) {
+                                tebakhewan();
+                            } else {
+                                System.out.println("[PERINTAH: Tolong input sesuai yang diminta; Silakan input tanpa tanda petik.]");
+                            }
+                        } while ((!(kuistebak.equalsIgnoreCase("1"))) || (!(kuistebak.equalsIgnoreCase("2"))));
 
                     } else {
                         System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
@@ -452,24 +465,83 @@ public class storyline2 {
 
     public void tebakangka() {
         Random acak = new Random();
-        int angka = acak.nextInt(10) + 1;
+        int angka = acak.nextInt(50) + 1;
         int tebak = 0;
         //System.out.println("angka random itu adalah: " + String.valueOf(angka));   -- ini cuma buat munculin angka randomnya brp--
         while (tebak != angka) {
             try {
-                System.out.print("Silakan tebak angka antara 1 sampai 10: ");
+                System.out.print("Silakan tebak angka antara 1 sampai 50: ");
                 tebak = scan.nextInt();
                 if (tebak < angka) {
                     System.out.println("Angka terlalu kecil. Silakan tebak lagi.\n");
                 } else if (tebak > angka) {
                     System.out.println("Angka terlalu besar. Silakan tebak lagi.\n");
                 } else {
-                    System.out.println("Jawaban anda benar!");
+                    System.out.println("Jawaban anda benar!\n\n"
+                            + "Aku berikan apresiasi padamu yang bisa menebak angka dengan benar.\n"
+                            + "Aku akui itu tidak mudah, namun kamu berhasil mencapai titik dimana kamu berhasil menebak angkanya.\n"
+                            + "Kamu melakukan yang terbaik dan sikap pantang menyerahmu ini sangatlah bagus.\n"
+                            + "Pertahankan dan tingkatkan. Tetap semangat dan pantang menyerah.\n\n"
+                            + "==PERLAHAN PUN KAU MENJADI DERET ANGKA YANG TAK LAGI BISA DITERKA==");
+                     System.out.println("\n\t\t==========================\n"
+                    + "\t\t\tTHE END\n"
+                    + "\t\t==========================");
                     System.exit(0);
                 }
             } catch (Exception e) {
                 System.out.println("Jawaban yang dimasukkan harus berupa angka.");
             }
+        }
+    }
+
+    public void tebakhewan() {
+        String jawaban = "sapi";
+        int guessCount = 0;
+        int guessLimit = 2;
+        boolean tebakan = true;
+
+        System.out.println("\n[Peraturan: anda hanya diberi 3x kesempatan untuk menjawab]\n"
+                + "Aku adalah hewan berkaki 4.\n"
+                + "Aku memiliki warna hitam putih.\n"
+                + "Aku biasanya menghasilkan susu.\n"
+                + "Siapakah aku? ");
+        System.out.print("jawab: ");
+        String guess = scan.nextLine();
+
+        while ((!(guess.equalsIgnoreCase(jawaban))) && (tebakan)) {
+            if (guessCount < guessLimit) {
+                System.out.println("Jawaban anda salah. Silakan tebak lagi.");
+                System.out.print("jawab: ");
+                guess = scan.nextLine();
+                guessCount++;
+            } else {
+                tebakan = false;                  //fungsinya biar kalo pas dia udah nebak 3x, bisa lnjut ke if else yg di bwh ini
+            }
+        }
+        if (tebakan) {
+            System.out.println("Jawaban anda benar!\n\n"
+                    + "Mengetahui bahwa sapi merupakan hewan yang dikenal sebagai penghasil susu.\n"
+                    + "Aku harap kamu mengetahuinya, karena kamu juga bisa seperti sapi yang dikenal karena salah satu keunggulannya.\n"
+                    + "Kamu pasti mempunyai keunggulan yang berbeda dibanding yang lain,\n"
+                    + "dan aku harap kamu tidak takut untuk melihatkannya pada dunia.\n\n"
+                    + "==HIDUP TIDAK SESEDERHANA SAPI PERAH YANG SETIAP DIPERAS TETAP DIAM IKHLAS.\n"
+                    + "  PEMILIKNYA TERSENYUM GIRANG MENDAPAT UANG, SEDANG SAPI HANYA MENDAPAT JERAMI.==\n"
+                    + "-Reana Methan");
+            System.out.println("\n\t\t==========================\n"
+                    + "\t\t\tTHE END\n"
+                    + "\t\t==========================");
+            System.exit(0);
+        } else {
+            System.out.println("Jawaban anda salah! Anda kehabisan kesempatan menebak.\n"
+                    + "Tidak apa-apa kehabisan kesempatan menebak.\n"
+                    + "Salah menebak di permainan ini bukan berarti gagal selamanya.\n"
+                    + "Kamu telah berusaha dengan baik. Terimakasih untuk itu.\n"
+                    + "Tetap semangat dan jangan pernah menyerah.\n\n"
+                    + "==IF YOU FEEL LIKE GIVING UP, JUST LOOK BACK ON HOW FAR YOU ARE ALREADY.==");
+            System.out.println("\n\t\t==========================\n"
+                    + "\t\t\tTHE END\n"
+                    + "\t\t==========================");
+            System.exit(0);
         }
     }
 
