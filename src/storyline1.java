@@ -17,6 +17,18 @@ public class storyline1 {
 
     static Scanner scan = new Scanner(System.in);
 
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String[] papan = new String[9];
+        String turn = "X";
+        String garis = null;
+        storyline2 obj = new storyline2();
+
+        obj.storyline(in, turn, papan, obj, garis);
+        obj.sh03(in, turn, papan, obj, garis);
+
+    }
+
     public void storyline(Scanner in, String turn, String[] papan, storyline2 obj, String garis) {
         System.out.println("\t\t=================================\n"
                 + "\t\tWELCOME, AND LET THE STORY BEGIN\n"
@@ -350,6 +362,126 @@ public class storyline1 {
     }
 
     public void cs10() {
+        String scroll;
+        System.out.println("\n\t\t''WELCOME TO ROOM CS10''"
+                + "\nPada ruangan CS10 terdapat 2 Scroll.\n"
+                + "Satu berwarna putih , dan satu berwarna kuning\n"
+                + "Tiap scroll berisikan sesuatu yang menarik.");
+
+        do {
+            System.out.print("Buka Scroll Putih / Scroll Kuning [Input 'Putih' / 'Kuning'] : ");
+            scroll = scan.nextLine();
+            if (scroll.equalsIgnoreCase("putih")) {
+                System.out.println("\nKamu perlahan membuka scroll putih tersebut \n"
+                        + "dan sebuah pintu putih terbuka , di pintu tersebut tertulis\n"
+                        + "\n\t\t==FIND YOUR OWN HAPPINESS==\n"
+                        + "\nApakah yang akan kamu lakukan?");
+
+                String pintu;
+                do {
+                    System.out.print("[ketik 'masuk' untuk berjalan memasuki pintu putih ATAU ketik 'tidak' untuk tidak memasuki pintu putih]: ");
+                    pintu = scan.nextLine();
+                    if (pintu.equalsIgnoreCase("masuk")) {
+                        System.out.println("\nDi dalam ruangan tersebut terdapat banyak bingkai-bingkai\n"
+                                + "Sesuai dengan nama ruangannya , ruangan tersebut berisi bingkai-bingkai tentang\n"
+                                + "semua hal yang dapat membuat diri kamu bahagia.\n"
+                                + "Kamu berjalan secara perlahan dan melihat setiap bingkai yang ada pada ruangan itu.\n"
+                                + "Kamu menemukan satu bingkai yang benar-benar mencerminkan kebahagian kamu\n"
+                                + "Apakah kamu mau masuk ke dalam bingkai?");
+
+                        String bingkai;
+                        do {
+                            System.out.print("[ketik 'masuk' untuk masuk atau 'tidak' untuk tidak masuk] : ");
+                            bingkai = scan.nextLine();
+                            if (bingkai.equalsIgnoreCase("masuk")) {
+                                System.out.println("\nKamu memasuki bingkai tersebut dan didalam bingkai itu,\n"
+                                        + "penglihatan kamu semakin memburuk dan juga kepala kamu terasa pusing.\n"
+                                        + "Seketika kamu pingsan, setelah itu kamu bangun dan berada pada suatu lahan kosong.\n"
+                                        + "Pandangan sally menatap pada sebuah rumah yang berada di depannya, Sally berjalan perlahan menuju ke rumah tersebut."
+                                        + "\nDi saat sudah dekat Sally menyadari bahwa rumah tersebut adalah rumah lama Sally.\n"
+                                        + "Sally perlahan berjalan lebih dekat pada rumah tersebut.\n"
+                                        + "Setelah sampai pada rumah itu Sally melihat ada  seorang wanita, seorang pria, dan juga ada 1 anak perempuan.\n"
+                                        + "Seketika Sally chou menyadari bahwa anak perempuan tersebut merupakan, sally chou dari masa lalu\n"
+                                        + "\nTerlihat dari jendela di tempat Sally Chou mengintip, bahwa keluarga tersebut sedang makan bersama,\n"
+                                        + "bercanda bersama, tertawa bersama. Hal tersebut membuat Sally Chou meneteskan air matany.a\n"
+                                        + "Beberapa menit berlalu, Sally semakin sadar bahwa salah satu hal yang membuat Sally Chou bahagia adalah berkumpul bersama keluarga,\n"
+                                        + "bercanda, dan tertawa bersama.\n"
+                                        + "Seketika penglihatan Sally memburuk dan kepalanya semakin pusing, Sally terbaring di lantai.\n"
+                                        + "Minutes passed, Sally Chou tiba-tiba terbangun dari mimpinya, meneteskan air mata dan langsung bergegas keluar dari kamarnya\n"
+                                        + "untuk menemui mami dan papinya, Sally Chou berlari ke arah mami dan papinya dan langsung memeluknya seerat-eratnya sambil menangis.\n"
+                                        + "Mami Sally menanyakan 'kamu mengapa menangis sayang?'\n"
+                                        + "Sally hanya diam dan tersenyum dengan mengucapkan 'I FOUND MY HAPPINESS'\n\n"
+                                        + "\t\t'Every story has an ending,make every page worth it'.\n"
+                                        + "\t\t\t==FIND YOUR OWN HAPPINESS==");
+
+                                System.out.println("\t\t==========================\n"
+                                        + "\t\t\tTHE END\n"
+                                        + "\t\t==========================");
+                                System.exit(0);
+
+                            } else if (bingkai.equalsIgnoreCase("tidak")) {
+                                System.out.println("Sally menolak untuk masuk kedalam bingkai tersebut, melainkan tetap mengamati semua bingkai-bingkai\n"
+                                        + "yang ada pada ruangan itu, satu per satu sally amati secara perlahan , tiap bingkai ia pandang\n\n"
+                                        + "\t\t\t==1 HOUR LATER==                                        \n"
+                                        + "setelah memutari dan mengamati setiap bingkai pada ruangan itu , sally chou terdiam sejenak dan tersenyum.\n"
+                                        + "ia menyadari bahwa selama ini ia telah memiliki banyak momen-momen bahagia tanpa disadarinya.\n"
+                                        + "sally chou kemabli terdiam dan tersenyum , pandangan sally semakin memburuk , dan juga kepalanya mulai pusing\n"
+                                        + "kemudian sally chou terbaring di laintai ruangan itu\n"
+                                        + "sally bangun dan menyadari semua itu hanyalah mimpinya , mimpi yang sangat indah.\n"
+                                        + "kemudian sally berjalan keluar kamarnya dan mencari semua orang yang dicintainya dan mengatakan\n\n "
+                                        + "\t\t==Thankyou for being my happiness==\n\n");
+                                System.out.println("\t\t===============================================================\n"
+                                        + "\t\t\tTHE END, but there's little game after this ~<.<~\n"
+                                        + "\t\t===============================================================");
+
+                                String decision;
+                                do {
+                                    System.out.print("Lets play a game, How about a little math?? [Yes/No]: ");
+                                    decision = scan.nextLine();
+                                    if (decision.equalsIgnoreCase("yes")) {
+                                        mathgame();
+                                    } else if (decision.equalsIgnoreCase("no")) {
+                                        System.out.println("\nOkie See you next time, Thankyou for playing :D            ");
+                                        System.exit(0);
+                                    } else {
+                                        System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
+                                    }
+                                } while ((!(decision.equalsIgnoreCase("yes"))) || (!(decision.equalsIgnoreCase("no"))));
+                            }
+                        } while ((!(bingkai.equalsIgnoreCase("masuk"))) || (!(bingkai.equalsIgnoreCase("tidak"))));
+                    } else if (pintu.equalsIgnoreCase("tidak")) {
+                        System.out.println("\nSally tidak mempercayai pintu putih tersebut dan ia terus membuka dan membaca scroll tersebut,\n"
+                                + "pada scroll tersebut bertuliskan hal-hal yang membuat sally happy, Sally membaca semua isi scroll tersebut\n"
+                                + "secara perlahan dan tanpa ia sadari bahwa banyak hal yang dapat membuat dirinya bahagia, setiap kalimat yang terdapat\n"
+                                + "pada scroll itu, berisikan tentang semua hal-hal yang perna dilakukan oleh sally yang bisa membuat diirinya bahagia,\n"
+                                + "tidak lama setelah membaca semuanya, muncul suatu kalimat pada scroll tersebut, muncullah kalimat\n"
+                                + " 'Membaca Scroll 'Find your own happiness' ");
+                    }
+
+                } while ((!(pintu.equalsIgnoreCase("masuk"))) || (!(pintu.equalsIgnoreCase("tidak"))));
+
+            } else if (scroll.equalsIgnoreCase("kuning")) {
+                System.out.println("\nSally membuka scroll kuning, isi scroll kuning berisi 2 tantangan:\n"
+                        + "1. Defeat Plankton\n"
+                        + "2. Complete a logic game");
+
+                String decis;
+                do {
+                    System.out.print("Challenge mana yang ingin kamu jalankan [1/2] : ");
+                    decis = scan.nextLine();
+                    if (decis.equalsIgnoreCase("1")) {
+                        plankton();
+                    } else if (decis.equalsIgnoreCase("2")) {
+                        System.out.println("");
+                    } else {
+                        System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
+                    }
+                } while ((!(decis.equalsIgnoreCase("1"))) && (!(decis.equalsIgnoreCase("2"))));
+
+            } else {
+                System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
+            }
+        } while ((!(scroll.equalsIgnoreCase("putih"))) || (!(scroll.equalsIgnoreCase("kuning"))));
 
     }
 
@@ -483,9 +615,9 @@ public class storyline1 {
                             + "Kamu melakukan yang terbaik dan sikap pantang menyerahmu ini sangatlah bagus.\n"
                             + "Pertahankan dan tingkatkan. Tetap semangat dan pantang menyerah.\n\n"
                             + "==PERLAHAN PUN KAU MENJADI DERET ANGKA YANG TAK LAGI BISA DITERKA==");
-                     System.out.println("\n\t\t==========================\n"
-                    + "\t\t\tTHE END\n"
-                    + "\t\t==========================");
+                    System.out.println("\n\t\t==========================\n"
+                            + "\t\t\tTHE END\n"
+                            + "\t\t==========================");
                     System.exit(0);
                 }
             } catch (Exception e) {
@@ -545,15 +677,174 @@ public class storyline1 {
         }
     }
 
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        String[] papan = new String[9];
-        String turn = "X";
-        String garis = null;
-        storyline2 obj = new storyline2();
+    public void mathgame() {
+        int number1, number2, number3, number4, number5, number6;
+        int[] jawaban = new int[3];
+        number1 = (int) (Math.random() * 100);
+        number2 = (int) (Math.random() * 100);
+        number3 = (int) (Math.random() * 100);
+        number4 = (int) (Math.random() * 100);
+        number5 = (int) (Math.random() * 100);
+        number6 = (int) (Math.random() * 100);
+        System.out.println("Welcome to 'THE MATH'  \n"
+                + "How to play : Kita akan mengacak angka dari 1-100 , kita akan memberi 2 angka , dan tujuan kamu adalah untuk \n"
+                + "menambah kedua angka , gampang kan? Yok kita mulai ");
+        System.out.print("First Question : " + number1 + " + " + number2 + " = ");
+        jawaban[0] = scan.nextInt();
+        if (jawaban[0] == (number1 + number2)) {
+            System.out.println("Kamu benar :D , LANJUT!!!\n");
+        } else {
+            System.out.println("Yahh kamu salah :( gapapa tetap semangat , yok lanjut ke pertanyaan selanjutnya\n");
+        }
+        System.out.print("Second Question : " + number3 + " + " + number4 + " = ");
+        jawaban[1] = scan.nextInt();
+        if (jawaban[1] == (number3 + number4)) {
+            System.out.println("Kamu benar :D , LANJUT!!!\n");
+        } else {
+            System.out.println("Yahh kamu salah :( gapapa tetap semangat , yok lanjut ke pertanyaan selanjutnya\n");
+        }
+        System.out.print("Third Question : " + number5 + " + " + number6 + " = ");
+        jawaban[2] = scan.nextInt();
+        if (jawaban[2] == (number5 + number6)) {
+            System.out.println("Kamu benar :D \n"
+                    + "\t\tCONGRATULATION ON COMPLETING 'THE MATH'\n\n"
+                    + "\t\tThankyou for playing!!!\n");
+        } else {
+            System.out.println("Yahh kamu salah :( gapapa tetap semangat, this is just for fun :D\n\n"
+                    + "\t\tCONGRATULATION ON COMPLETING 'THE MATH'                 \n"
+                    + "\n\t\tThankyou for playing!!!                    ");
+        }
+        System.out.println("\t\t==========================\n"
+                + "\t\t\tTHE END\n"
+                + "\t\t==========================");
+        System.exit(0);
+    }
 
-        obj.storyline(in, turn, papan, obj, garis);
-        obj.sh03(in, turn, papan, obj, garis);
+    public void plankton() {
+        String pilihan = null;
+        int Plankton, hp, energy;
+        int ultimate;
+        int pilih;
+        do {
+            Plankton = 100;
+            hp = 60;
+            energy = 20;
+            System.out.println("\n\nAh, the sea. So fascinating, so wonderful. Here, we see Bikini Bottom, teaming with life. \n"
+                    + "Home of one of my favorite creatures: Spongebob Squarepants. Yes, of course he lives in a pineapple, you silly.\n"
+                    + "And there we see patrick the star,, but ofcourse he lives under a rock.\n"
+                    + "ahh i see here we have spongebob's heading to work.\n"
+                    + "\n\t\t\tOH NO ITS PLANKTON!! \n\n"
+                    + "QUICK!! DEFEND THE KRUSTY CRAB!!!");
+            do {
+                System.out.println("\nYour Turn\n"
+                        + "===============\n"
+                        + "Enemy: Plankton\n"
+                        + "Plankton's Health: " + Plankton);
+                System.out.println("===============\n"
+                        + "Your Health : " + hp);
+                System.out.println("Your Energy : " + energy);
+                System.out.println("1. Throw a Krabby Patty (Consume 0 Energy)\n"
+                        + "2. Throw Patrick (Consume 5 Energy)\n"
+                        + "3. Ultimate 'Spongebob's Laugh of death ' (Consume 20 Energy)\n"
+                        + "4. Recharge 'Eat a Krabby Patty' (+5 Energy)");
+                System.out.print("Type your decision [type '1' or '2' or '3' or '4']: ");
+                pilih = scan.nextInt();
 
+                if (pilih == 1) {
+                    Plankton -= 10;
+                    hp -= 10;
+                    System.out.println("\n\nPlankton's Turn\nSwoosh!!!\n");
+
+                } else if (pilih == 2) {
+                    if (energy >= 5) {
+                        energy -= 5;
+                        Plankton -= 20;
+                        System.out.println("\nThrow Patrick , \nYEEET!!");
+                        hp -= 10;
+                        System.out.println("\n\nPlankton's Turn\nSwoosh!!!\n");
+                    } else {
+                        System.out.println("\nNot Enough Energy!!");
+                    }
+
+                } else if (pilih == 3) {
+                    if (energy == 20) {
+                        energy -= 20;
+                        Plankton -= 40;
+                        System.out.println("\nUltimate!!\n"
+                                + "!!!TAHIAHIAHIAHIAHAHAHAHA!!!\n"
+                                + "                 ===Enter Special Zone===\n"
+                                + "Plankton's Turn\nSwoosh!!!");
+                        int chance = 2;
+                        do {
+                            System.out.println("\nYour Turn\n"
+                                    + "===============\n"
+                                    + "Enemy : Plankton\n"
+                                    + "Plankton's Health = " + Plankton);
+                            System.out.println("Your Health = " + hp);
+                            System.out.println("Your Energy = " + energy);
+                            System.out.println("1. Throw a Krabby Patty (Consume 0 Mana)\n"
+                                    + "2. Eat A Krabby Patty (+5 Mana)");
+                            System.out.print("Action : ");
+                            ultimate = scan.nextInt();
+
+                            if (ultimate == 1) {
+                                Plankton -= 20;
+                                hp -= 10;
+                                System.out.println("\nThrow Patrick , \nYEEET!!");
+                                System.out.println("\nPlankton's Turn\nSwoosh!!!\n");
+                                chance -= 1;
+
+                            } else if (ultimate == 2) {
+                                hp -= 10;
+                                energy += 5;
+                                chance -= 1;
+
+                            } else {
+                                System.out.println("Please input a valid number.");
+                            }
+                        } while (chance > 0);
+
+                    } else {
+                        System.out.println("\nNot Enough Energy");
+                        hp -= 10;
+                        System.out.println("\nPlankton's Turn\nSwoosh!!!\n");
+                    }
+
+                } else if (pilih == 4) {
+                    if (energy < 20) {
+                        energy += 5;
+                        if (energy >= 20) {
+                            energy = 20;
+                        }
+                    }
+                    if (energy >= 20) {
+                        energy = 20;
+                        System.out.println("\nFULL OF ENERGY, LET'S GOO!!!");
+                    }
+                    System.out.println("\nPlankton's Turn\nSwoosh!!!\n");
+                    hp -= 10;
+
+                } else {
+                    System.out.println("Please input a valid number.\n");
+                }
+            } while (hp > 0 && Plankton > 0);
+
+            //cek hp n plankton
+            if (hp <= 0 && Plankton > 0) {
+                System.out.println("\tNOOO, PLANKTON HAS WON!!!\n"
+                        + "\tBetter Luck Next Time Champ!!");
+                System.out.print("Want to Retry?? [yes/no]: ");
+                pilihan = scan.next();
+            } else if (hp > 0 && Plankton <= 0) {
+                System.out.println("YOU DEFEATED PLANKTON AND SAVED THE KRUSTY KRAB GOODJOB!!!\n"
+                        + "\n\t\tThanks For Playing!!");
+                System.exit(0);
+            } else if (hp <= 0 && Plankton <= 0) {
+                System.out.println("YOU BOTH FEEL EXHAUSTED AND END THE FIGHT WITH A DRAW!\n"
+                        + "\n\t\tBetter luck Next time, Thanks for playing");
+                System.exit(0);
+            }
+
+        } while (pilihan.equalsIgnoreCase("yes"));
     }
 }
