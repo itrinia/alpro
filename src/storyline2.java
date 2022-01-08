@@ -22,7 +22,7 @@ public class storyline2 {
     static Scanner scan = new Scanner(System.in);
     static Clip clip;
 
-    public static void music(){
+    public static void music() {
         try {
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("song.wav").getAbsoluteFile());
             clip = AudioSystem.getClip();
@@ -33,10 +33,10 @@ public class storyline2 {
             ex.printStackTrace();
         }
     }
-    
-    public static void main(String[] args) {   
+
+    public static void main(String[] args) {
         music();
-        
+
         Scanner in = new Scanner(System.in);
         String[] papan = new String[9];
         String turn = "X";
@@ -94,7 +94,7 @@ public class storyline2 {
                 System.out.println("\nKetika kamu membukanya, kamu menemukan tulisan 'BE HAPPY'");
                 System.out.println("Di kertas betuliskan 'BE HAPPY' tersebut, terdapat 2 sisi.\n"
                         + "Apa yang akan kamu lakukan?");
-                
+
                 String kertas;
                 do {
                     System.out.print("[ketik 'bakar' untuk membakar kertasnya ATAU ketik 'balik' untuk membalik sisi kertas tersebut]: ");
@@ -460,7 +460,7 @@ public class storyline2 {
                                     if (decision.equalsIgnoreCase("yes")) {
                                         mathgame();
                                     } else if (decision.equalsIgnoreCase("no")) {
-                                        System.out.println("\nOkie See you next time, Thankyou for playing :D            ");
+                                        System.out.println("\nOkie See you next time, Thanks for playing :D            ");
                                         System.exit(0);
                                     } else {
                                         System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
@@ -487,25 +487,80 @@ public class storyline2 {
 
                 String decis;
                 do {
-                    System.out.print("Challenge mana yang ingin kamu jalankan [1/2] : ");
+                    System.out.print("Challenge mana yang ingin kamu jalankan [1/2]: ");
                     decis = scan.nextLine();
                     if (decis.equalsIgnoreCase("1")) {
                         plankton();
-                        System.out.println(" ");
-                        System.out.println("\t\t==========================\n"
-                                + "\t\t\tTHE END\n"
-                                + "\t\t==========================");
-                        System.out.println("You've completed the challenge "
-                                + "\n\t\t CONGRATULATION!!\n"
-                                + "You collected your prize\n"
-                                + "\t\t +1 Gold Envelope\n");
-                        System.exit(0);
+                        System.out.println("\nYou defeated TimeCrawler , not long before then a portal appeared\n"
+                                + "inside the monster's stomach, a golden envelope apperead out of thin air\n"
+                                + "you are given 2 choices, either get inside the portal or open the golden envelope.\n"
+                                + "which one are you choosing?");
+                        String pilihan2;
+                        pilihan2 = scan.next();
+                        if (pilihan2.equalsIgnoreCase("Envelope")) {
+                            System.out.println("You open the golden envelope,in that golden envelope is written\n"
+                                    + "'Congratulation on finishing the challenge, just a reminder dont let anyone\n"
+                                    + "bring you down , you are amazing in your own way,\n"
+                                    + "\t\t'Life is a story, and you are the writer,write your very own happiness'");
+                        } else if (pilihan2.equalsIgnoreCase("portal")) {
+                            System.out.println("You entered the portal, or should i say the monster's stomach \n"
+                                    + "You got teleported to an empty room with nothing but 2 boxes,\n"
+                                    + "A red box and a blue box.\n"
+                                    + "you can only choose one, pick em wisely");
+                            String box23;
+                            box23 = scan.next();
+                            if (box23.equalsIgnoreCase("red")) {
+
+                                System.out.println("Theres a letter inside the box, its written\n\n");
+                                System.out.println("Happiness is always a by-product. It is probably a matter of temperament,\n"
+                                        + "and for anything I know it may be glandular.\n"
+                                        + "But it is not something that can be demanded from life, \n"
+                                        + "and if you are not happy you had better stop worrying about it \n"
+                                        + "and see what treasures you can pluck from your own brand of unhappiness.");
+                            } else if (box23.equalsIgnoreCase("blue")) {
+
+                                System.out.println("Theres a letter inside the box, its written\n\n");
+                                System.out.println("he greatest happiness of life is the conviction that we are loved\n"
+                                        + "loved for ourselves, or rather, loved in spite of ourselves.");
+                            }
+                            String Decis2;
+                            System.out.println("You've completed the challenge "
+                                    + "\n\t\t CONGRATULATION!!\n"
+                                    + "You collected your prize\n"
+                                    + "\t\t +1 Gold Envelope\n");
+                            System.out.println("\nDo you want to open the envelope? [Yes/No] : ");
+                            Decis2 = scan.next();
+                            if (Decis2.equalsIgnoreCase("Yes")) {
+                                System.out.println("You open the golden envelope,in that golden envelope is written\n"
+                                        + "'Congratulation on finishing the challenge, just a reminder dont let anyone\n"
+                                        + "bring you down , you are amazing in your own way,\n"
+                                        + "\t\t'make your own happiness'");
+                            } else if (Decis2.equalsIgnoreCase("no")) {
+                                System.out.println("The Golden Envelope Remains misterious\n"
+                                        + "until we meet again challenger!!\n"
+                                        + "thankyou for playing");
+                            }
+                            System.exit(0);
+                        }
                     } else if (decis.equalsIgnoreCase("2")) {
                         logic();
+                        String Decis1;
                         System.out.println("You've completed the challenge "
                                 + "\n\t\t CONGRATULATION!!\n"
                                 + "You collected your prize\n"
                                 + "\t\t +1 Gold Envelope\n");
+                        System.out.println("\nDo you want to open the envelope? [Yes/No] : ");
+                        Decis1 = scan.next();
+                        if (Decis1.equalsIgnoreCase("Yes")) {
+                            System.out.println("You open the golden envelope,in that golden envelope is written\n"
+                                    + "'Congratulation on finishing the challenge, just a reminder dont let anyone\n"
+                                    + "bring you down , you are amazing in your own way,\n"
+                                    + "\t\t'make your own happiness'");
+                        } else if (Decis1.equalsIgnoreCase("no")) {
+                            System.out.println("The Golden Envelope Remains misterious\n"
+                                    + "until we meet again challenger!!\n"
+                                    + "thankyou for playing");
+                        }
                         System.exit(0);
                     } else {
                         System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
@@ -519,7 +574,8 @@ public class storyline2 {
 
     }
 
-    public void tiktaktu(Scanner in, String turn, String[] papan, storyline2 obj, String garis) {
+
+public void tiktaktu(Scanner in, String turn, String[] papan, storyline2 obj, String garis) {
 
         turn = "X";
         String winner = null;
@@ -763,39 +819,38 @@ public class storyline2 {
             Plankton = 100;
             hp = 60;
             energy = 20;
-            System.out.println("\n\nAh, the sea. So fascinating, so wonderful. Here, we see Bikini Bottom, teaming with life. \n"
-                    + "Home of one of my favorite creatures: Spongebob Squarepants. Yes, of course he lives in a pineapple, you silly.\n"
-                    + "And there we see patrick the star,, but ofcourse he lives under a rock.\n"
-                    + "ahh i see here we have spongebob's heading to work.\n"
-                    + "\n\t\t\tOH NO ITS PLANKTON!! \n\n"
-                    + "QUICK!! DEFEND THE KRUSTY CRAB!!!");
+            System.out.println("\n\nYou spawned inside a dark arena , with nothing but a sword in your hand.\n"
+                    + "a hole was seen with a gate covering it, the gate suddenly opened ,\n"
+                    + "the ground started to shake,sally felt a strong gust of wind hitting her , a monster apperared\n"
+                    + "out of the hole, the monster is know as the 'TimeCrawler'\n\n"
+                    + "Task : Defeat The TimeCrawler");
             do {
                 System.out.println("\nYour Turn\n"
                         + "===============\n"
-                        + "Enemy: Plankton\n"
-                        + "Plankton's Health: " + Plankton);
+                        + "Enemy: TimeCrawler\n"
+                        + "TimeCrawler's Health: " + Plankton);
                 System.out.println("===============\n"
                         + "Your Health : " + hp);
                 System.out.println("Your Energy : " + energy);
-                System.out.println("1. Throw a Krabby Patty (Consume 0 Energy)\n"
-                        + "2. Throw Patrick (Consume 5 Energy)\n"
-                        + "3. Ultimate 'Spongebob's Laugh of death ' (Consume 20 Energy)\n"
-                        + "4. Recharge 'Eat a Krabby Patty' (+5 Energy)");
-                System.out.print("Type your decision [type '1' or '2' or '3' or '4']: ");
+                System.out.println("1. Slash (Consume 0 Energy)\n"
+                        + "2. Boomerang Blade (Consume 5 Energy)\n"
+                        + "3. Ultimate (Consume 20 Energy)\n"
+                        + "4. Meditate (+5 Energy)");
+                System.out.print("Your Choice [1,2,3,4]: ");
                 pilih = scan.nextInt();
 
                 if (pilih == 1) {
                     Plankton -= 10;
                     hp -= 10;
-                    System.out.println("\n\nPlankton's Turn\nSwoosh!!!\n");
+                    System.out.println("\n\nTimeCrawler's turn\n");
 
                 } else if (pilih == 2) {
                     if (energy >= 5) {
                         energy -= 5;
                         Plankton -= 20;
-                        System.out.println("\nThrow Patrick , \nYEEET!!");
+                        System.out.println("\nBOOMERANG BLADE!!");
                         hp -= 10;
-                        System.out.println("\n\nPlankton's Turn\nSwoosh!!!\n");
+                        System.out.println("\n\nTimeCrawler's turn\n");
                     } else {
                         System.out.println("\nNot Enough Energy!!");
                     }
@@ -805,28 +860,29 @@ public class storyline2 {
                         energy -= 20;
                         Plankton -= 40;
                         System.out.println("\nUltimate!!\n"
-                                + "!!!TAHIAHIAHIAHIAHAHAHAHA!!!\n"
-                                + "                 ===Enter Special Zone===\n"
-                                + "Plankton's Turn\nSwoosh!!!");
+                                + "An eye for an eye will only make the whole world blind.\n"
+                                + "                ~|Shadow Eruption|~\n\n"
+                                + "TimeCrawler's turn");
                         int chance = 2;
                         do {
                             if (hp > 0 && Plankton > 0) {
                                 System.out.println("\nYour Turn\n"
                                         + "===============\n"
-                                        + "Enemy : Plankton\n"
-                                        + "Plankton's Health = " + Plankton);
+                                        + "Enemy : TimeCrawler\n"
+                                        + "TimeCrawler's Health = " + Plankton);
+                                System.out.println("===============\n");
                                 System.out.println("Your Health = " + hp);
                                 System.out.println("Your Energy = " + energy);
-                                System.out.println("1. Throw a Krabby Patty (Consume 0 Mana)\n"
-                                        + "2. Eat A Krabby Patty (+5 Mana)");
+                                System.out.println("1. Slash (Consume 0 Mana)\n"
+                                        + "2. Meditate (+5 Mana)");
                                 System.out.print("Action : ");
                                 ultimate = scan.nextInt();
 
                                 if (ultimate == 1) {
                                     Plankton -= 20;
                                     hp -= 10;
-                                    System.out.println("\nThrow Patrick , \nYEEET!!");
-                                    System.out.println("\nPlankton's Turn\nSwoosh!!!\n");
+                                    System.out.println("\nBOOMERANG BLADE!!");
+                                    System.out.println("\nTimeCrawler's Turn\n");
 
                                 } else if (ultimate == 2) {
                                     hp -= 10;
@@ -842,7 +898,7 @@ public class storyline2 {
                     } else {
                         System.out.println("\nNot Enough Energy");
                         hp -= 10;
-                        System.out.println("\nPlankton's Turn\nSwoosh!!!\n");
+                        System.out.println("\nTimeCrawler's Turn\n");
                     }
 
                 } else if (pilih == 4) {
@@ -854,46 +910,48 @@ public class storyline2 {
                     }
                     if (energy >= 20) {
                         energy = 20;
-                        System.out.println("\nFULL OF ENERGY, LET'S GOO!!!");
+                        System.out.println("\nFULL ENERGY!!, LET'S GOO!!!");
                     }
-                    System.out.println("\nPlankton's Turn\nSwoosh!!!\n");
+                    System.out.println("\nTimeCrawler's Turn\n");
                     hp -= 10;
 
                 } else {
-                    System.out.println("Please input a valid number.\n");
+                    System.out.println("\nPlease input a valid number.\n");
                 }
             } while (hp > 0 && Plankton > 0);
 
             //cek hp n plankton
             if (hp <= 0 && Plankton > 0) {
                 System.out.println("\n======================");
-                System.out.println("plankton's health: " + Plankton);
+                System.out.println("TimeCrawler's health: " + Plankton);
                 System.out.println("----------------------");
                 System.out.println("your energy: " + energy);
                 System.out.println("your health: " + hp);
                 System.out.println("----------------------");
-                System.out.println("\n\t\tNOOO, PLANKTON HAS WON!!!\n"
-                        + "\t\tBetter Luck Next Time Champ!!\n");
+                System.out.println("You are a strong and amazing warrior, but the timecrawler \n"
+                        + "is a strong and worthy opponent, dont let yourself down kid,\n"
+                        + "You'll defeat him next time.\n\n");
 
             } else if (hp > 0 && Plankton <= 0) {
                 System.out.println("\n======================");
-                System.out.println("plankton's health: " + Plankton);
+                System.out.println("TimeCrawler's health: " + Plankton);
                 System.out.println("----------------------");
                 System.out.println("your energy: " + energy);
                 System.out.println("your health: " + hp);
                 System.out.println("----------------------");
-                System.out.println("\n\t\tYOU DEFEATED PLANKTON AND SAVED THE KRUSTY KRAB GOODJOB!!!"
-                        + "\n\t\tThanks For Playing!!\n");
+                System.out.println("\n\t\tYou defeated TimeCrawler, and achieve victory through this challenge.\n"
+                        + "Thank you for playing! :)");
 
             } else if (hp <= 0 && Plankton <= 0) {
                 System.out.println("\n======================");
-                System.out.println("plankton's health: " + Plankton);
+                System.out.println("TimeCrawler's health: " + Plankton);
                 System.out.println("----------------------");
                 System.out.println("your energy: " + energy);
                 System.out.println("your health: " + hp);
                 System.out.println("----------------------");
-                System.out.println("\n\t\tYOU BOTH FEEL EXHAUSTED AND END THE FIGHT WITH A DRAW!\n"
-                        + "\t\tBetter luck Next time, Thanks for playing\n");
+                System.out.println("\n\t\tThe duel ended with a draw, either You fleeted or \n"
+                        + "\t\tthe monster just gave up on you :)\n"
+                        + "\t\tBetter luck Next time, Thanks for playing :)\n");
 
             }
             do {
@@ -905,15 +963,6 @@ public class storyline2 {
             } while ((!(pilihan.equalsIgnoreCase("yes"))) && (!(pilihan.equalsIgnoreCase("no"))));
 
         } while (pilihan.equalsIgnoreCase("yes"));
-
-        //kalo yg pas want to retry nya dia milih no,, bakal ada sambungan cerita lagi
-        System.out.println("\nYou had an exhausting day fighting plankton, you went home and come across a gift \n"
-                + "at your front door, it says\n"
-                + "'Dear spongebob thankyou for defending the krusty krab from plankton's evil and dirty scheme\n"
-                + " Heres a Krabby patty cake to celebrate!'");
-        System.out.println("\n\t\t==========================\n"
-                + "\t\t\tTHE END\n"
-                + "\t\t==========================");
         System.exit(0);
     }
 
