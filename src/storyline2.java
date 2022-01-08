@@ -1,8 +1,12 @@
 
+import java.io.File;
 import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -16,8 +20,23 @@ import java.util.Scanner;
 public class storyline2 {
 
     static Scanner scan = new Scanner(System.in);
+    static Clip clip;
 
-    public static void main(String[] args) {
+    public static void music(){
+        try {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("song.wav").getAbsoluteFile());
+            clip = AudioSystem.getClip();
+            clip.open(audioInputStream);
+            clip.start();
+        } catch (Exception ex) {
+            System.out.println("Error with playing sound.");
+            ex.printStackTrace();
+        }
+    }
+    
+    public static void main(String[] args) {   
+        music();
+        
         Scanner in = new Scanner(System.in);
         String[] papan = new String[9];
         String turn = "X";
@@ -75,7 +94,7 @@ public class storyline2 {
                 System.out.println("\nKetika kamu membukanya, kamu menemukan tulisan 'BE HAPPY'");
                 System.out.println("Di kertas betuliskan 'BE HAPPY' tersebut, terdapat 2 sisi.\n"
                         + "Apa yang akan kamu lakukan?");
-
+                
                 String kertas;
                 do {
                     System.out.print("[ketik 'bakar' untuk membakar kertasnya ATAU ketik 'balik' untuk membalik sisi kertas tersebut]: ");
@@ -456,6 +475,7 @@ public class storyline2 {
                                 + "pada scroll itu, berisikan tentang semua hal-hal yang perna dilakukan oleh sally yang bisa membuat diirinya bahagia,\n"
                                 + "tidak lama setelah membaca semuanya, muncul suatu kalimat pada scroll tersebut, muncullah kalimat\n"
                                 + " 'Membaca Scroll 'Find your own happiness' ");
+                        System.exit(0);
                     }
 
                 } while ((!(pintu.equalsIgnoreCase("masuk"))) || (!(pintu.equalsIgnoreCase("tidak"))));
@@ -471,8 +491,22 @@ public class storyline2 {
                     decis = scan.nextLine();
                     if (decis.equalsIgnoreCase("1")) {
                         plankton();
+                        System.out.println(" ");
+                        System.out.println("\t\t==========================\n"
+                                + "\t\t\tTHE END\n"
+                                + "\t\t==========================");
+                        System.out.println("You've completed the challenge "
+                                + "\n\t\t CONGRATULATION!!\n"
+                                + "You collected your prize\n"
+                                + "\t\t +1 Gold Envelope\n");
+                        System.exit(0);
                     } else if (decis.equalsIgnoreCase("2")) {
-                        System.out.println("");
+                        logic();
+                        System.out.println("You've completed the challenge "
+                                + "\n\t\t CONGRATULATION!!\n"
+                                + "You collected your prize\n"
+                                + "\t\t +1 Gold Envelope\n");
+                        System.exit(0);
                     } else {
                         System.out.println("[PERINTAH: Tolong input sesuai yang diminta.]");
                     }
@@ -776,32 +810,33 @@ public class storyline2 {
                                 + "Plankton's Turn\nSwoosh!!!");
                         int chance = 2;
                         do {
-                            System.out.println("\nYour Turn\n"
-                                    + "===============\n"
-                                    + "Enemy : Plankton\n"
-                                    + "Plankton's Health = " + Plankton);
-                            System.out.println("Your Health = " + hp);
-                            System.out.println("Your Energy = " + energy);
-                            System.out.println("1. Throw a Krabby Patty (Consume 0 Mana)\n"
-                                    + "2. Eat A Krabby Patty (+5 Mana)");
-                            System.out.print("Action : ");
-                            ultimate = scan.nextInt();
+                            if (hp > 0 && Plankton > 0) {
+                                System.out.println("\nYour Turn\n"
+                                        + "===============\n"
+                                        + "Enemy : Plankton\n"
+                                        + "Plankton's Health = " + Plankton);
+                                System.out.println("Your Health = " + hp);
+                                System.out.println("Your Energy = " + energy);
+                                System.out.println("1. Throw a Krabby Patty (Consume 0 Mana)\n"
+                                        + "2. Eat A Krabby Patty (+5 Mana)");
+                                System.out.print("Action : ");
+                                ultimate = scan.nextInt();
 
-                            if (ultimate == 1) {
-                                Plankton -= 20;
-                                hp -= 10;
-                                System.out.println("\nThrow Patrick , \nYEEET!!");
-                                System.out.println("\nPlankton's Turn\nSwoosh!!!\n");
-                                chance -= 1;
+                                if (ultimate == 1) {
+                                    Plankton -= 20;
+                                    hp -= 10;
+                                    System.out.println("\nThrow Patrick , \nYEEET!!");
+                                    System.out.println("\nPlankton's Turn\nSwoosh!!!\n");
 
-                            } else if (ultimate == 2) {
-                                hp -= 10;
-                                energy += 5;
-                                chance -= 1;
+                                } else if (ultimate == 2) {
+                                    hp -= 10;
+                                    energy += 5;
 
-                            } else {
-                                System.out.println("Please input a valid number.");
+                                } else {
+                                    System.out.println("Please input a valid number.");
+                                }
                             }
+                            chance -= 1;
                         } while (chance > 0);
 
                     } else {
@@ -831,20 +866,104 @@ public class storyline2 {
 
             //cek hp n plankton
             if (hp <= 0 && Plankton > 0) {
-                System.out.println("\tNOOO, PLANKTON HAS WON!!!\n"
-                        + "\tBetter Luck Next Time Champ!!");
-                System.out.print("Want to Retry?? [yes/no]: ");
-                pilihan = scan.next();
+                System.out.println("\n======================");
+                System.out.println("plankton's health: " + Plankton);
+                System.out.println("----------------------");
+                System.out.println("your energy: " + energy);
+                System.out.println("your health: " + hp);
+                System.out.println("----------------------");
+                System.out.println("\n\t\tNOOO, PLANKTON HAS WON!!!\n"
+                        + "\t\tBetter Luck Next Time Champ!!\n");
+
             } else if (hp > 0 && Plankton <= 0) {
-                System.out.println("YOU DEFEATED PLANKTON AND SAVED THE KRUSTY KRAB GOODJOB!!!\n"
-                        + "\n\t\tThanks For Playing!!");
-                System.exit(0);
+                System.out.println("\n======================");
+                System.out.println("plankton's health: " + Plankton);
+                System.out.println("----------------------");
+                System.out.println("your energy: " + energy);
+                System.out.println("your health: " + hp);
+                System.out.println("----------------------");
+                System.out.println("\n\t\tYOU DEFEATED PLANKTON AND SAVED THE KRUSTY KRAB GOODJOB!!!"
+                        + "\n\t\tThanks For Playing!!\n");
+
             } else if (hp <= 0 && Plankton <= 0) {
-                System.out.println("YOU BOTH FEEL EXHAUSTED AND END THE FIGHT WITH A DRAW!\n"
-                        + "\n\t\tBetter luck Next time, Thanks for playing");
-                System.exit(0);
+                System.out.println("\n======================");
+                System.out.println("plankton's health: " + Plankton);
+                System.out.println("----------------------");
+                System.out.println("your energy: " + energy);
+                System.out.println("your health: " + hp);
+                System.out.println("----------------------");
+                System.out.println("\n\t\tYOU BOTH FEEL EXHAUSTED AND END THE FIGHT WITH A DRAW!\n"
+                        + "\t\tBetter luck Next time, Thanks for playing\n");
+
             }
+            do {
+                System.out.print("Want to Retry?? ['yes'/'no']: ");
+                pilihan = scan.next();
+                if ((!(pilihan.equalsIgnoreCase("yes"))) && (!(pilihan.equalsIgnoreCase("no")))) {
+                    System.out.println("[PERINTAH: Tolong input sesuai yang diminta; Silakan input tanpa tanda petik.]");
+                }
+            } while ((!(pilihan.equalsIgnoreCase("yes"))) && (!(pilihan.equalsIgnoreCase("no"))));
 
         } while (pilihan.equalsIgnoreCase("yes"));
+
+        //kalo yg pas want to retry nya dia milih no,, bakal ada sambungan cerita lagi
+        System.out.println("\nYou had an exhausting day fighting plankton, you went home and come across a gift \n"
+                + "at your front door, it says\n"
+                + "'Dear spongebob thankyou for defending the krusty krab from plankton's evil and dirty scheme\n"
+                + " Heres a Krabby patty cake to celebrate!'");
+        System.out.println("\n\t\t==========================\n"
+                + "\t\t\tTHE END\n"
+                + "\t\t==========================");
+        System.exit(0);
+    }
+
+    public void logic() {
+        String answer[] = new String[3];
+        System.out.println("Welcome To Logic games, The rules are simple\n"
+                + "we will give you 3 riddle , solve every single riddle as possible\n"
+                + "the more correct answer the better prize you'll get \n"
+                + "\t\t GOOD LUCK");
+
+        System.out.println("FIRST RIDDLE!!\n"
+                + "One day , a storm blew up in the city and caused a widespread blackout,\n"
+                + "after the storm has passed , a maid was found dead in a mansion."
+                + "3 Suspects were questioned , the first one is 'The Husband' , The second one  'The Wife', \n"
+                + "and the third one is 'the Butler'\n"
+                + "The husband was questioned , he answered 'I was reading a book in my bedroom'\n"
+                + "The wife answered, i was watching TV in the living room.\n"
+                + "the butler answered 'i was in my room counting my family expenses'\n"
+                + "The detective immediately know who the killer is and arrest them.\n"
+                + "\t\tNOW THE QUESTION\n"
+                + "WHO'S THE KILLER?\n"
+                + "A. The husband\n"
+                + "B. The Wife\n"
+                + "C. The Butler\n");
+        System.out.print("[Answer in A,B,C form]: ");
+        answer[0] = scan.next();
+        System.out.println("Next Million dollar Riddle!! \n"
+                + "A guy was walking infront of a apartment when suddenly a box fell on hes head\n"
+                + "he was found dead, 4 citizen was interrogated\n"
+                + "The detective asked everyone the same question 'Are you involved in this incident?' "
+                + "The first suspect is Maria, she said 'I wasnt even home when the incident happened' \n"
+                + "The second suspect is herold, he said 'I was watching tv when the incident happened'\n"
+                + "The third suspect is Allen, he said 'I didnt know anything about the incident , I was grilling steak with my friend when the box incident happened'\n"
+                + "The forth suspect is Casper, he said 'I was asleep when the incident happened'\n"
+                + "The detective immediately know who the killer is.\n"
+                + "\nWho's the Killer??\n\n"
+                + "A. Casper\n"
+                + "B. Herold\n"
+                + "C. Maria\n"
+                + "D. Allen\n");
+        System.out.print("[Answer in A,B,C,D form]: ");
+        answer[1] = scan.next();
+        if (answer[0].equalsIgnoreCase("B") && answer[1].equalsIgnoreCase("D")) {
+            System.out.println("\nWow 2/2 such big brain you have there, Welldone!!\n"
+                    + "This is the end for the Logic game\n"
+                    + "\t\t THANKYOU FOR PLAYING!!");
+        } else {
+            System.out.println("\nAwww you didnt Get all of em right , its okie you are still amazing :D\n"
+                    + "This is the end for the logic game\n"
+                    + "\t\t THANKYOU FOR PLAYING!!!");
+        }
     }
 }
